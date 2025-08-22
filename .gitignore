@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Temporary files
+tmp/
+*.log
+*.tmp
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+*.lcov
+
+# Environment
+.env
+.env.local
+
+# Cache
+.cache/

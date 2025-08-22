@@ -1,0 +1,18 @@
+name: introduction
+type: concept
+category: concept
+description: Introduction to the system
+content: |
+  # Welcome to Atomic Composer
+  
+  This is a demonstration of atomic document composition where content is built 
+  from the smallest possible units (particles) and assembled into complete documents.
+  
+  Features:
+  - Real-time composition
+  - Template variable substitution
+  - Hierarchical particle organization
+  - File system watching
+tags:
+  - introduction
+  - demo

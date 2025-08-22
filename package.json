@@ -1,0 +1,55 @@
+{
+  "name": "@akaoio/composer",
+  "version": "0.1.0",
+  "description": "Atomic document composition engine with real-time template processing",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build && npm test",
+    "example": "node example/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akaoio/composer.git"
+  },
+  "keywords": [
+    "composer",
+    "template",
+    "documentation",
+    "atomic",
+    "real-time",
+    "yaml",
+    "markdown"
+  ],
+  "author": "AKAO.IO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akaoio/composer/issues"
+  },
+  "homepage": "https://github.com/akaoio/composer#readme",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
