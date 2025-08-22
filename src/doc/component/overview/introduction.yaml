@@ -1,0 +1,12 @@
+title: Introduction
+description: Complete introduction to Composer
+atoms:
+  - intro/atom/what-is-composer
+  - intro/atom/why-composer
+  - intro/atom/self-documenting
+template: |
+  ## {{title}}
+  
+  {{#each atoms}}
+  {{this.content}}
+  {{/each}}

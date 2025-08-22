@@ -1,0 +1,4 @@
+title: Class = Directory Pattern
+content: Each class is a directory with methods in separate files, following AKAO.io principles for maintainability.
+category: architecture
+weight: 2

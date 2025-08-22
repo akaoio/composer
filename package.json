@@ -1,17 +1,33 @@
 {
   "name": "@akaoio/composer",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Atomic document composition engine with real-time template processing",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "prepublishOnly": "npm run build && npm test",
-    "example": "node example/index.js"
+    "example": "node example/index.js",
+    "example:generic": "node example/generic-usage.js",
+    "docs:build": "node -e \"const{ConfigLoader,BuildPipeline}=require('./dist/index.js');(async()=>{const l=new ConfigLoader('./composer.unified.config.js');const c=await l.loadConfig();const p=new BuildPipeline(c);await p.execute();console.log('✅ Docs generated')})()\"",
+    "watch": "node bin/composer-watch.js",
+    "watch:daemon": "node bin/composer-watch.js --daemon",
+    "service:install": "bash scripts/install-service.sh",
+    "service:pm2": "pm2 start pm2.config.js",
+    "service:docker": "docker-compose -f docker/docker-compose.yml up -d"
   },
   "repository": {
     "type": "git",
@@ -34,14 +50,17 @@
   "homepage": "https://github.com/akaoio/composer#readme",
   "dependencies": {
     "chokidar": "^3.5.3",
+    "glob": "^10.3.10",
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.14",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.11.0",
     "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
+    "ts-jest": "^29.4.1",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.4",
     "typescript": "^5.3.3"
   },
   "files": [

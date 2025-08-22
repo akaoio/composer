@@ -1,0 +1,5 @@
+title: "Zero Technical Debt"
+content: "Complete every task fully before moving on - no TODO, FIXME, or placeholder code allowed."
+principle_number: 2
+critical: true
+weight: 2

@@ -1,0 +1,11 @@
+title: Watch Daemon
+content: Dedicated daemon script for running Composer watch as a background service with PID management, signal handling, and graceful shutdown.
+category: service
+weight: 4
+details:
+  executable: "bin/composer-watch.js"
+  daemon_mode: "--daemon"
+  pid_file: "--pid=/tmp/composer-watch.pid"
+  log_file: "--log=/var/log/composer-watch.log"
+  health_check: "--health-check --port=3001"
+  signals: "SIGTERM (graceful shutdown), SIGINT (interrupt), SIGHUP (reload config)"

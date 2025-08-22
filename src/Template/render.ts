@@ -1,4 +1,4 @@
-export async function render(this: any, template: string): Promise<string> {
+export function render(this: any, template: string): string {
   const variables = this.parseVariables(template)
   let rendered = template
   

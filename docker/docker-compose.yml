@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  composer-watch:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.service
+    container_name: composer-watch
+    restart: unless-stopped
+    volumes:
+      # Mount your data directories
+      - ./data:/data:ro
+      - ./templates:/templates:ro
+      - ./particles:/particles:ro
+      - ./components:/components:ro
+      - ./documents:/documents:ro
+      # Output directory (read-write)
+      - ./output:/output
+      # Config file
+      - ./composer.config.js:/app/composer.config.js:ro
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+    ports:
+      - "3001:3001" # Health check endpoint
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - composer-network
+
+networks:
+  composer-network:
+    driver: bridge

@@ -1,0 +1,9 @@
+title: "Pre-Commit Checklist"
+content: |
+  Before any commit:
+  ✓ Tests pass
+  ✓ No TODO/FIXME
+  ✓ No console.log debug
+  ✓ Clean workspace
+  ✓ Proper file structure
+weight: 2

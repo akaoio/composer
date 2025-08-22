@@ -1,5 +1,5 @@
-import type { CompositionContext } from '../type/index.js'
+import type { RenderContext } from '../type/index.js'
 
-export function constructor(this: any, context: CompositionContext) {
+export function constructor(this: any, context: RenderContext) {
   this.context = context
 }

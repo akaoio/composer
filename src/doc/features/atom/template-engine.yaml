@@ -1,0 +1,4 @@
+title: Template Engine
+content: Built-in template engine with variable substitution supporting nested paths and array access.
+category: features
+weight: 1

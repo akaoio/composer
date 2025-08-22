@@ -1,0 +1,15 @@
+name: Composer
+description: Main class for orchestrating the build process
+methods:
+  - name: loadData
+    params: ""
+    description: Loads data from configured data path
+  - name: render
+    params: ""
+    description: Renders templates with loaded data
+  - name: watch
+    params: "callback?"
+    description: Watches for file changes and rebuilds
+  - name: stop
+    params: ""
+    description: Stops watching for changes

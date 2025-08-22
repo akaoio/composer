@@ -1,0 +1,10 @@
+title: Systemd Service
+content: Run Composer watch as a systemd service with automatic restart and process management. Use `systemctl` commands to manage the service lifecycle.
+category: service
+weight: 1
+details:
+  installation: "sudo cp systemd/composer-watch.service /etc/systemd/system/composer-watch@.service"
+  enable: "sudo systemctl enable composer-watch@$USER"
+  start: "sudo systemctl start composer-watch@$USER"
+  status: "systemctl status composer-watch@$USER"
+  logs: "journalctl -u composer-watch@$USER -f"

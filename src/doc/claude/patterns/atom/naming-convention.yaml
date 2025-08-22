@@ -1,0 +1,9 @@
+title: "Naming Convention"
+content: |
+  Use singular forms and single words:
+  - User not Users
+  - get not getUser
+  - save not saveData
+  Long names split into directories:
+  - user/profile/update.ts not updateUserProfile.ts
+weight: 2

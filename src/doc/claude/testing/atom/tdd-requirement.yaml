@@ -1,0 +1,4 @@
+title: "Test-Driven Development"
+content: "Write tests BEFORE implementation - Red, Green, Refactor cycle prevents architecture drift."
+importance: critical
+weight: 1

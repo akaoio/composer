@@ -1,0 +1,9 @@
+title: "Test File Structure"
+content: "Each method has its own test file: save.ts → save.test.ts in the same directory."
+example: |
+  Composer/
+    render.ts
+    render.test.ts
+    loadData.ts
+    loadData.test.ts
+weight: 2

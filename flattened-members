@@ -1,0 +1,1879 @@
+{
+  "members": [
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "frontend",
+        "name": "Frontend Engineering",
+        "mission": "Create beautiful, responsive user interfaces",
+        "workflow": [
+          "Design review with UX team",
+          "Component-based development",
+          "Responsive testing across devices",
+          "Performance optimization"
+        ],
+        "members": [
+          {
+            "id": "fe001",
+            "name": "Alice Chen",
+            "role": "Senior Frontend Developer",
+            "specialty": "React & TypeScript",
+            "experience": "5 years"
+          },
+          {
+            "id": "fe002",
+            "name": "Bob Martinez",
+            "role": "UI/UX Developer",
+            "specialty": "CSS & Design Systems",
+            "experience": "4 years"
+          },
+          {
+            "id": "fe003",
+            "name": "Carol Kim",
+            "role": "Frontend Architect",
+            "specialty": "Performance & Architecture",
+            "experience": "7 years"
+          },
+          {
+            "id": "fe004",
+            "name": "David Wilson",
+            "role": "Mobile Developer",
+            "specialty": "React Native",
+            "experience": "3 years"
+          },
+          {
+            "id": "fe005",
+            "name": "Eva Rodriguez",
+            "role": "Junior Developer",
+            "specialty": "HTML/CSS/JS",
+            "experience": "1 year"
+          }
+        ]
+      },
+      "member": {
+        "id": "fe001",
+        "name": "Alice Chen",
+        "role": "Senior Frontend Developer",
+        "specialty": "React & TypeScript",
+        "experience": "5 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "frontend",
+        "name": "Frontend Engineering",
+        "mission": "Create beautiful, responsive user interfaces",
+        "workflow": [
+          "Design review with UX team",
+          "Component-based development",
+          "Responsive testing across devices",
+          "Performance optimization"
+        ],
+        "members": [
+          {
+            "id": "fe001",
+            "name": "Alice Chen",
+            "role": "Senior Frontend Developer",
+            "specialty": "React & TypeScript",
+            "experience": "5 years"
+          },
+          {
+            "id": "fe002",
+            "name": "Bob Martinez",
+            "role": "UI/UX Developer",
+            "specialty": "CSS & Design Systems",
+            "experience": "4 years"
+          },
+          {
+            "id": "fe003",
+            "name": "Carol Kim",
+            "role": "Frontend Architect",
+            "specialty": "Performance & Architecture",
+            "experience": "7 years"
+          },
+          {
+            "id": "fe004",
+            "name": "David Wilson",
+            "role": "Mobile Developer",
+            "specialty": "React Native",
+            "experience": "3 years"
+          },
+          {
+            "id": "fe005",
+            "name": "Eva Rodriguez",
+            "role": "Junior Developer",
+            "specialty": "HTML/CSS/JS",
+            "experience": "1 year"
+          }
+        ]
+      },
+      "member": {
+        "id": "fe002",
+        "name": "Bob Martinez",
+        "role": "UI/UX Developer",
+        "specialty": "CSS & Design Systems",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "frontend",
+        "name": "Frontend Engineering",
+        "mission": "Create beautiful, responsive user interfaces",
+        "workflow": [
+          "Design review with UX team",
+          "Component-based development",
+          "Responsive testing across devices",
+          "Performance optimization"
+        ],
+        "members": [
+          {
+            "id": "fe001",
+            "name": "Alice Chen",
+            "role": "Senior Frontend Developer",
+            "specialty": "React & TypeScript",
+            "experience": "5 years"
+          },
+          {
+            "id": "fe002",
+            "name": "Bob Martinez",
+            "role": "UI/UX Developer",
+            "specialty": "CSS & Design Systems",
+            "experience": "4 years"
+          },
+          {
+            "id": "fe003",
+            "name": "Carol Kim",
+            "role": "Frontend Architect",
+            "specialty": "Performance & Architecture",
+            "experience": "7 years"
+          },
+          {
+            "id": "fe004",
+            "name": "David Wilson",
+            "role": "Mobile Developer",
+            "specialty": "React Native",
+            "experience": "3 years"
+          },
+          {
+            "id": "fe005",
+            "name": "Eva Rodriguez",
+            "role": "Junior Developer",
+            "specialty": "HTML/CSS/JS",
+            "experience": "1 year"
+          }
+        ]
+      },
+      "member": {
+        "id": "fe003",
+        "name": "Carol Kim",
+        "role": "Frontend Architect",
+        "specialty": "Performance & Architecture",
+        "experience": "7 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "frontend",
+        "name": "Frontend Engineering",
+        "mission": "Create beautiful, responsive user interfaces",
+        "workflow": [
+          "Design review with UX team",
+          "Component-based development",
+          "Responsive testing across devices",
+          "Performance optimization"
+        ],
+        "members": [
+          {
+            "id": "fe001",
+            "name": "Alice Chen",
+            "role": "Senior Frontend Developer",
+            "specialty": "React & TypeScript",
+            "experience": "5 years"
+          },
+          {
+            "id": "fe002",
+            "name": "Bob Martinez",
+            "role": "UI/UX Developer",
+            "specialty": "CSS & Design Systems",
+            "experience": "4 years"
+          },
+          {
+            "id": "fe003",
+            "name": "Carol Kim",
+            "role": "Frontend Architect",
+            "specialty": "Performance & Architecture",
+            "experience": "7 years"
+          },
+          {
+            "id": "fe004",
+            "name": "David Wilson",
+            "role": "Mobile Developer",
+            "specialty": "React Native",
+            "experience": "3 years"
+          },
+          {
+            "id": "fe005",
+            "name": "Eva Rodriguez",
+            "role": "Junior Developer",
+            "specialty": "HTML/CSS/JS",
+            "experience": "1 year"
+          }
+        ]
+      },
+      "member": {
+        "id": "fe004",
+        "name": "David Wilson",
+        "role": "Mobile Developer",
+        "specialty": "React Native",
+        "experience": "3 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "frontend",
+        "name": "Frontend Engineering",
+        "mission": "Create beautiful, responsive user interfaces",
+        "workflow": [
+          "Design review with UX team",
+          "Component-based development",
+          "Responsive testing across devices",
+          "Performance optimization"
+        ],
+        "members": [
+          {
+            "id": "fe001",
+            "name": "Alice Chen",
+            "role": "Senior Frontend Developer",
+            "specialty": "React & TypeScript",
+            "experience": "5 years"
+          },
+          {
+            "id": "fe002",
+            "name": "Bob Martinez",
+            "role": "UI/UX Developer",
+            "specialty": "CSS & Design Systems",
+            "experience": "4 years"
+          },
+          {
+            "id": "fe003",
+            "name": "Carol Kim",
+            "role": "Frontend Architect",
+            "specialty": "Performance & Architecture",
+            "experience": "7 years"
+          },
+          {
+            "id": "fe004",
+            "name": "David Wilson",
+            "role": "Mobile Developer",
+            "specialty": "React Native",
+            "experience": "3 years"
+          },
+          {
+            "id": "fe005",
+            "name": "Eva Rodriguez",
+            "role": "Junior Developer",
+            "specialty": "HTML/CSS/JS",
+            "experience": "1 year"
+          }
+        ]
+      },
+      "member": {
+        "id": "fe005",
+        "name": "Eva Rodriguez",
+        "role": "Junior Developer",
+        "specialty": "HTML/CSS/JS",
+        "experience": "1 year"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "backend",
+        "name": "Backend Engineering",
+        "mission": "Build scalable, secure server infrastructure",
+        "workflow": [
+          "API design and documentation",
+          "Database schema planning",
+          "Security implementation",
+          "Performance monitoring"
+        ],
+        "members": [
+          {
+            "id": "be001",
+            "name": "Frank Zhang",
+            "role": "Backend Architect",
+            "specialty": "Microservices & K8s",
+            "experience": "8 years"
+          },
+          {
+            "id": "be002",
+            "name": "Grace Thompson",
+            "role": "API Developer",
+            "specialty": "Node.js & GraphQL",
+            "experience": "5 years"
+          },
+          {
+            "id": "be003",
+            "name": "Henry Lee",
+            "role": "Database Engineer",
+            "specialty": "PostgreSQL & Redis",
+            "experience": "6 years"
+          },
+          {
+            "id": "be004",
+            "name": "Ivy Patel",
+            "role": "DevOps Engineer",
+            "specialty": "AWS & Docker",
+            "experience": "4 years"
+          },
+          {
+            "id": "be005",
+            "name": "Jack Brown",
+            "role": "Security Engineer",
+            "specialty": "Auth & Encryption",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "be001",
+        "name": "Frank Zhang",
+        "role": "Backend Architect",
+        "specialty": "Microservices & K8s",
+        "experience": "8 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "backend",
+        "name": "Backend Engineering",
+        "mission": "Build scalable, secure server infrastructure",
+        "workflow": [
+          "API design and documentation",
+          "Database schema planning",
+          "Security implementation",
+          "Performance monitoring"
+        ],
+        "members": [
+          {
+            "id": "be001",
+            "name": "Frank Zhang",
+            "role": "Backend Architect",
+            "specialty": "Microservices & K8s",
+            "experience": "8 years"
+          },
+          {
+            "id": "be002",
+            "name": "Grace Thompson",
+            "role": "API Developer",
+            "specialty": "Node.js & GraphQL",
+            "experience": "5 years"
+          },
+          {
+            "id": "be003",
+            "name": "Henry Lee",
+            "role": "Database Engineer",
+            "specialty": "PostgreSQL & Redis",
+            "experience": "6 years"
+          },
+          {
+            "id": "be004",
+            "name": "Ivy Patel",
+            "role": "DevOps Engineer",
+            "specialty": "AWS & Docker",
+            "experience": "4 years"
+          },
+          {
+            "id": "be005",
+            "name": "Jack Brown",
+            "role": "Security Engineer",
+            "specialty": "Auth & Encryption",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "be002",
+        "name": "Grace Thompson",
+        "role": "API Developer",
+        "specialty": "Node.js & GraphQL",
+        "experience": "5 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "backend",
+        "name": "Backend Engineering",
+        "mission": "Build scalable, secure server infrastructure",
+        "workflow": [
+          "API design and documentation",
+          "Database schema planning",
+          "Security implementation",
+          "Performance monitoring"
+        ],
+        "members": [
+          {
+            "id": "be001",
+            "name": "Frank Zhang",
+            "role": "Backend Architect",
+            "specialty": "Microservices & K8s",
+            "experience": "8 years"
+          },
+          {
+            "id": "be002",
+            "name": "Grace Thompson",
+            "role": "API Developer",
+            "specialty": "Node.js & GraphQL",
+            "experience": "5 years"
+          },
+          {
+            "id": "be003",
+            "name": "Henry Lee",
+            "role": "Database Engineer",
+            "specialty": "PostgreSQL & Redis",
+            "experience": "6 years"
+          },
+          {
+            "id": "be004",
+            "name": "Ivy Patel",
+            "role": "DevOps Engineer",
+            "specialty": "AWS & Docker",
+            "experience": "4 years"
+          },
+          {
+            "id": "be005",
+            "name": "Jack Brown",
+            "role": "Security Engineer",
+            "specialty": "Auth & Encryption",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "be003",
+        "name": "Henry Lee",
+        "role": "Database Engineer",
+        "specialty": "PostgreSQL & Redis",
+        "experience": "6 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "backend",
+        "name": "Backend Engineering",
+        "mission": "Build scalable, secure server infrastructure",
+        "workflow": [
+          "API design and documentation",
+          "Database schema planning",
+          "Security implementation",
+          "Performance monitoring"
+        ],
+        "members": [
+          {
+            "id": "be001",
+            "name": "Frank Zhang",
+            "role": "Backend Architect",
+            "specialty": "Microservices & K8s",
+            "experience": "8 years"
+          },
+          {
+            "id": "be002",
+            "name": "Grace Thompson",
+            "role": "API Developer",
+            "specialty": "Node.js & GraphQL",
+            "experience": "5 years"
+          },
+          {
+            "id": "be003",
+            "name": "Henry Lee",
+            "role": "Database Engineer",
+            "specialty": "PostgreSQL & Redis",
+            "experience": "6 years"
+          },
+          {
+            "id": "be004",
+            "name": "Ivy Patel",
+            "role": "DevOps Engineer",
+            "specialty": "AWS & Docker",
+            "experience": "4 years"
+          },
+          {
+            "id": "be005",
+            "name": "Jack Brown",
+            "role": "Security Engineer",
+            "specialty": "Auth & Encryption",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "be004",
+        "name": "Ivy Patel",
+        "role": "DevOps Engineer",
+        "specialty": "AWS & Docker",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "backend",
+        "name": "Backend Engineering",
+        "mission": "Build scalable, secure server infrastructure",
+        "workflow": [
+          "API design and documentation",
+          "Database schema planning",
+          "Security implementation",
+          "Performance monitoring"
+        ],
+        "members": [
+          {
+            "id": "be001",
+            "name": "Frank Zhang",
+            "role": "Backend Architect",
+            "specialty": "Microservices & K8s",
+            "experience": "8 years"
+          },
+          {
+            "id": "be002",
+            "name": "Grace Thompson",
+            "role": "API Developer",
+            "specialty": "Node.js & GraphQL",
+            "experience": "5 years"
+          },
+          {
+            "id": "be003",
+            "name": "Henry Lee",
+            "role": "Database Engineer",
+            "specialty": "PostgreSQL & Redis",
+            "experience": "6 years"
+          },
+          {
+            "id": "be004",
+            "name": "Ivy Patel",
+            "role": "DevOps Engineer",
+            "specialty": "AWS & Docker",
+            "experience": "4 years"
+          },
+          {
+            "id": "be005",
+            "name": "Jack Brown",
+            "role": "Security Engineer",
+            "specialty": "Auth & Encryption",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "be005",
+        "name": "Jack Brown",
+        "role": "Security Engineer",
+        "specialty": "Auth & Encryption",
+        "experience": "5 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "ai",
+        "name": "AI/ML Engineering",
+        "mission": "Integrate cutting-edge AI into products",
+        "workflow": [
+          "Research and experimentation",
+          "Model training and optimization",
+          "Production deployment",
+          "Performance evaluation"
+        ],
+        "members": [
+          {
+            "id": "ai001",
+            "name": "Kate Singh",
+            "role": "ML Engineer",
+            "specialty": "Deep Learning & PyTorch",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai002",
+            "name": "Liam O'Connor",
+            "role": "Data Scientist",
+            "specialty": "Statistics & Analytics",
+            "experience": "6 years"
+          },
+          {
+            "id": "ai003",
+            "name": "Maya Johnson",
+            "role": "AI Researcher",
+            "specialty": "NLP & Transformers",
+            "experience": "3 years"
+          },
+          {
+            "id": "ai004",
+            "name": "Noah Davis",
+            "role": "MLOps Engineer",
+            "specialty": "Model Deployment",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai005",
+            "name": "Olivia White",
+            "role": "Computer Vision Engineer",
+            "specialty": "CV & Image Processing",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "ai001",
+        "name": "Kate Singh",
+        "role": "ML Engineer",
+        "specialty": "Deep Learning & PyTorch",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "ai",
+        "name": "AI/ML Engineering",
+        "mission": "Integrate cutting-edge AI into products",
+        "workflow": [
+          "Research and experimentation",
+          "Model training and optimization",
+          "Production deployment",
+          "Performance evaluation"
+        ],
+        "members": [
+          {
+            "id": "ai001",
+            "name": "Kate Singh",
+            "role": "ML Engineer",
+            "specialty": "Deep Learning & PyTorch",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai002",
+            "name": "Liam O'Connor",
+            "role": "Data Scientist",
+            "specialty": "Statistics & Analytics",
+            "experience": "6 years"
+          },
+          {
+            "id": "ai003",
+            "name": "Maya Johnson",
+            "role": "AI Researcher",
+            "specialty": "NLP & Transformers",
+            "experience": "3 years"
+          },
+          {
+            "id": "ai004",
+            "name": "Noah Davis",
+            "role": "MLOps Engineer",
+            "specialty": "Model Deployment",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai005",
+            "name": "Olivia White",
+            "role": "Computer Vision Engineer",
+            "specialty": "CV & Image Processing",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "ai002",
+        "name": "Liam O'Connor",
+        "role": "Data Scientist",
+        "specialty": "Statistics & Analytics",
+        "experience": "6 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "ai",
+        "name": "AI/ML Engineering",
+        "mission": "Integrate cutting-edge AI into products",
+        "workflow": [
+          "Research and experimentation",
+          "Model training and optimization",
+          "Production deployment",
+          "Performance evaluation"
+        ],
+        "members": [
+          {
+            "id": "ai001",
+            "name": "Kate Singh",
+            "role": "ML Engineer",
+            "specialty": "Deep Learning & PyTorch",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai002",
+            "name": "Liam O'Connor",
+            "role": "Data Scientist",
+            "specialty": "Statistics & Analytics",
+            "experience": "6 years"
+          },
+          {
+            "id": "ai003",
+            "name": "Maya Johnson",
+            "role": "AI Researcher",
+            "specialty": "NLP & Transformers",
+            "experience": "3 years"
+          },
+          {
+            "id": "ai004",
+            "name": "Noah Davis",
+            "role": "MLOps Engineer",
+            "specialty": "Model Deployment",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai005",
+            "name": "Olivia White",
+            "role": "Computer Vision Engineer",
+            "specialty": "CV & Image Processing",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "ai003",
+        "name": "Maya Johnson",
+        "role": "AI Researcher",
+        "specialty": "NLP & Transformers",
+        "experience": "3 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "ai",
+        "name": "AI/ML Engineering",
+        "mission": "Integrate cutting-edge AI into products",
+        "workflow": [
+          "Research and experimentation",
+          "Model training and optimization",
+          "Production deployment",
+          "Performance evaluation"
+        ],
+        "members": [
+          {
+            "id": "ai001",
+            "name": "Kate Singh",
+            "role": "ML Engineer",
+            "specialty": "Deep Learning & PyTorch",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai002",
+            "name": "Liam O'Connor",
+            "role": "Data Scientist",
+            "specialty": "Statistics & Analytics",
+            "experience": "6 years"
+          },
+          {
+            "id": "ai003",
+            "name": "Maya Johnson",
+            "role": "AI Researcher",
+            "specialty": "NLP & Transformers",
+            "experience": "3 years"
+          },
+          {
+            "id": "ai004",
+            "name": "Noah Davis",
+            "role": "MLOps Engineer",
+            "specialty": "Model Deployment",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai005",
+            "name": "Olivia White",
+            "role": "Computer Vision Engineer",
+            "specialty": "CV & Image Processing",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "ai004",
+        "name": "Noah Davis",
+        "role": "MLOps Engineer",
+        "specialty": "Model Deployment",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "ai",
+        "name": "AI/ML Engineering",
+        "mission": "Integrate cutting-edge AI into products",
+        "workflow": [
+          "Research and experimentation",
+          "Model training and optimization",
+          "Production deployment",
+          "Performance evaluation"
+        ],
+        "members": [
+          {
+            "id": "ai001",
+            "name": "Kate Singh",
+            "role": "ML Engineer",
+            "specialty": "Deep Learning & PyTorch",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai002",
+            "name": "Liam O'Connor",
+            "role": "Data Scientist",
+            "specialty": "Statistics & Analytics",
+            "experience": "6 years"
+          },
+          {
+            "id": "ai003",
+            "name": "Maya Johnson",
+            "role": "AI Researcher",
+            "specialty": "NLP & Transformers",
+            "experience": "3 years"
+          },
+          {
+            "id": "ai004",
+            "name": "Noah Davis",
+            "role": "MLOps Engineer",
+            "specialty": "Model Deployment",
+            "experience": "4 years"
+          },
+          {
+            "id": "ai005",
+            "name": "Olivia White",
+            "role": "Computer Vision Engineer",
+            "specialty": "CV & Image Processing",
+            "experience": "5 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "ai005",
+        "name": "Olivia White",
+        "role": "Computer Vision Engineer",
+        "specialty": "CV & Image Processing",
+        "experience": "5 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "product",
+        "name": "Product Management",
+        "mission": "Define product strategy and user experience",
+        "workflow": [
+          "User research and interviews",
+          "Feature prioritization",
+          "Cross-team coordination",
+          "Metrics and analytics review"
+        ],
+        "members": [
+          {
+            "id": "pm001",
+            "name": "Paul Anderson",
+            "role": "Product Manager",
+            "specialty": "Strategic Planning",
+            "experience": "7 years"
+          },
+          {
+            "id": "pm002",
+            "name": "Quinn Taylor",
+            "role": "UX Designer",
+            "specialty": "User Research",
+            "experience": "4 years"
+          },
+          {
+            "id": "pm003",
+            "name": "Rachel Green",
+            "role": "Product Analyst",
+            "specialty": "Data Analytics",
+            "experience": "3 years"
+          },
+          {
+            "id": "pm004",
+            "name": "Sam Miller",
+            "role": "Technical Writer",
+            "specialty": "Documentation",
+            "experience": "5 years"
+          },
+          {
+            "id": "pm005",
+            "name": "Tina Clark",
+            "role": "QA Engineer",
+            "specialty": "Test Automation",
+            "experience": "4 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pm001",
+        "name": "Paul Anderson",
+        "role": "Product Manager",
+        "specialty": "Strategic Planning",
+        "experience": "7 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "product",
+        "name": "Product Management",
+        "mission": "Define product strategy and user experience",
+        "workflow": [
+          "User research and interviews",
+          "Feature prioritization",
+          "Cross-team coordination",
+          "Metrics and analytics review"
+        ],
+        "members": [
+          {
+            "id": "pm001",
+            "name": "Paul Anderson",
+            "role": "Product Manager",
+            "specialty": "Strategic Planning",
+            "experience": "7 years"
+          },
+          {
+            "id": "pm002",
+            "name": "Quinn Taylor",
+            "role": "UX Designer",
+            "specialty": "User Research",
+            "experience": "4 years"
+          },
+          {
+            "id": "pm003",
+            "name": "Rachel Green",
+            "role": "Product Analyst",
+            "specialty": "Data Analytics",
+            "experience": "3 years"
+          },
+          {
+            "id": "pm004",
+            "name": "Sam Miller",
+            "role": "Technical Writer",
+            "specialty": "Documentation",
+            "experience": "5 years"
+          },
+          {
+            "id": "pm005",
+            "name": "Tina Clark",
+            "role": "QA Engineer",
+            "specialty": "Test Automation",
+            "experience": "4 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pm002",
+        "name": "Quinn Taylor",
+        "role": "UX Designer",
+        "specialty": "User Research",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "product",
+        "name": "Product Management",
+        "mission": "Define product strategy and user experience",
+        "workflow": [
+          "User research and interviews",
+          "Feature prioritization",
+          "Cross-team coordination",
+          "Metrics and analytics review"
+        ],
+        "members": [
+          {
+            "id": "pm001",
+            "name": "Paul Anderson",
+            "role": "Product Manager",
+            "specialty": "Strategic Planning",
+            "experience": "7 years"
+          },
+          {
+            "id": "pm002",
+            "name": "Quinn Taylor",
+            "role": "UX Designer",
+            "specialty": "User Research",
+            "experience": "4 years"
+          },
+          {
+            "id": "pm003",
+            "name": "Rachel Green",
+            "role": "Product Analyst",
+            "specialty": "Data Analytics",
+            "experience": "3 years"
+          },
+          {
+            "id": "pm004",
+            "name": "Sam Miller",
+            "role": "Technical Writer",
+            "specialty": "Documentation",
+            "experience": "5 years"
+          },
+          {
+            "id": "pm005",
+            "name": "Tina Clark",
+            "role": "QA Engineer",
+            "specialty": "Test Automation",
+            "experience": "4 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pm003",
+        "name": "Rachel Green",
+        "role": "Product Analyst",
+        "specialty": "Data Analytics",
+        "experience": "3 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "product",
+        "name": "Product Management",
+        "mission": "Define product strategy and user experience",
+        "workflow": [
+          "User research and interviews",
+          "Feature prioritization",
+          "Cross-team coordination",
+          "Metrics and analytics review"
+        ],
+        "members": [
+          {
+            "id": "pm001",
+            "name": "Paul Anderson",
+            "role": "Product Manager",
+            "specialty": "Strategic Planning",
+            "experience": "7 years"
+          },
+          {
+            "id": "pm002",
+            "name": "Quinn Taylor",
+            "role": "UX Designer",
+            "specialty": "User Research",
+            "experience": "4 years"
+          },
+          {
+            "id": "pm003",
+            "name": "Rachel Green",
+            "role": "Product Analyst",
+            "specialty": "Data Analytics",
+            "experience": "3 years"
+          },
+          {
+            "id": "pm004",
+            "name": "Sam Miller",
+            "role": "Technical Writer",
+            "specialty": "Documentation",
+            "experience": "5 years"
+          },
+          {
+            "id": "pm005",
+            "name": "Tina Clark",
+            "role": "QA Engineer",
+            "specialty": "Test Automation",
+            "experience": "4 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pm004",
+        "name": "Sam Miller",
+        "role": "Technical Writer",
+        "specialty": "Documentation",
+        "experience": "5 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "product",
+        "name": "Product Management",
+        "mission": "Define product strategy and user experience",
+        "workflow": [
+          "User research and interviews",
+          "Feature prioritization",
+          "Cross-team coordination",
+          "Metrics and analytics review"
+        ],
+        "members": [
+          {
+            "id": "pm001",
+            "name": "Paul Anderson",
+            "role": "Product Manager",
+            "specialty": "Strategic Planning",
+            "experience": "7 years"
+          },
+          {
+            "id": "pm002",
+            "name": "Quinn Taylor",
+            "role": "UX Designer",
+            "specialty": "User Research",
+            "experience": "4 years"
+          },
+          {
+            "id": "pm003",
+            "name": "Rachel Green",
+            "role": "Product Analyst",
+            "specialty": "Data Analytics",
+            "experience": "3 years"
+          },
+          {
+            "id": "pm004",
+            "name": "Sam Miller",
+            "role": "Technical Writer",
+            "specialty": "Documentation",
+            "experience": "5 years"
+          },
+          {
+            "id": "pm005",
+            "name": "Tina Clark",
+            "role": "QA Engineer",
+            "specialty": "Test Automation",
+            "experience": "4 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pm005",
+        "name": "Tina Clark",
+        "role": "QA Engineer",
+        "specialty": "Test Automation",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "platform",
+        "name": "Platform Engineering",
+        "mission": "Maintain robust development infrastructure",
+        "workflow": [
+          "Infrastructure as Code",
+          "CI/CD pipeline optimization",
+          "Monitoring and alerting",
+          "Developer experience improvement"
+        ],
+        "members": [
+          {
+            "id": "pf001",
+            "name": "Uma Sharma",
+            "role": "Platform Architect",
+            "specialty": "Kubernetes & Cloud",
+            "experience": "8 years"
+          },
+          {
+            "id": "pf002",
+            "name": "Victor Hughes",
+            "role": "Site Reliability Engineer",
+            "specialty": "Monitoring & Alerts",
+            "experience": "6 years"
+          },
+          {
+            "id": "pf003",
+            "name": "Wendy Liu",
+            "role": "Build Engineer",
+            "specialty": "CI/CD & Automation",
+            "experience": "4 years"
+          },
+          {
+            "id": "pf004",
+            "name": "Xavier Ross",
+            "role": "Security Engineer",
+            "specialty": "Infrastructure Security",
+            "experience": "5 years"
+          },
+          {
+            "id": "pf005",
+            "name": "Yara Hassan",
+            "role": "Cloud Engineer",
+            "specialty": "AWS & Terraform",
+            "experience": "3 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pf001",
+        "name": "Uma Sharma",
+        "role": "Platform Architect",
+        "specialty": "Kubernetes & Cloud",
+        "experience": "8 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "platform",
+        "name": "Platform Engineering",
+        "mission": "Maintain robust development infrastructure",
+        "workflow": [
+          "Infrastructure as Code",
+          "CI/CD pipeline optimization",
+          "Monitoring and alerting",
+          "Developer experience improvement"
+        ],
+        "members": [
+          {
+            "id": "pf001",
+            "name": "Uma Sharma",
+            "role": "Platform Architect",
+            "specialty": "Kubernetes & Cloud",
+            "experience": "8 years"
+          },
+          {
+            "id": "pf002",
+            "name": "Victor Hughes",
+            "role": "Site Reliability Engineer",
+            "specialty": "Monitoring & Alerts",
+            "experience": "6 years"
+          },
+          {
+            "id": "pf003",
+            "name": "Wendy Liu",
+            "role": "Build Engineer",
+            "specialty": "CI/CD & Automation",
+            "experience": "4 years"
+          },
+          {
+            "id": "pf004",
+            "name": "Xavier Ross",
+            "role": "Security Engineer",
+            "specialty": "Infrastructure Security",
+            "experience": "5 years"
+          },
+          {
+            "id": "pf005",
+            "name": "Yara Hassan",
+            "role": "Cloud Engineer",
+            "specialty": "AWS & Terraform",
+            "experience": "3 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pf002",
+        "name": "Victor Hughes",
+        "role": "Site Reliability Engineer",
+        "specialty": "Monitoring & Alerts",
+        "experience": "6 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "platform",
+        "name": "Platform Engineering",
+        "mission": "Maintain robust development infrastructure",
+        "workflow": [
+          "Infrastructure as Code",
+          "CI/CD pipeline optimization",
+          "Monitoring and alerting",
+          "Developer experience improvement"
+        ],
+        "members": [
+          {
+            "id": "pf001",
+            "name": "Uma Sharma",
+            "role": "Platform Architect",
+            "specialty": "Kubernetes & Cloud",
+            "experience": "8 years"
+          },
+          {
+            "id": "pf002",
+            "name": "Victor Hughes",
+            "role": "Site Reliability Engineer",
+            "specialty": "Monitoring & Alerts",
+            "experience": "6 years"
+          },
+          {
+            "id": "pf003",
+            "name": "Wendy Liu",
+            "role": "Build Engineer",
+            "specialty": "CI/CD & Automation",
+            "experience": "4 years"
+          },
+          {
+            "id": "pf004",
+            "name": "Xavier Ross",
+            "role": "Security Engineer",
+            "specialty": "Infrastructure Security",
+            "experience": "5 years"
+          },
+          {
+            "id": "pf005",
+            "name": "Yara Hassan",
+            "role": "Cloud Engineer",
+            "specialty": "AWS & Terraform",
+            "experience": "3 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pf003",
+        "name": "Wendy Liu",
+        "role": "Build Engineer",
+        "specialty": "CI/CD & Automation",
+        "experience": "4 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "platform",
+        "name": "Platform Engineering",
+        "mission": "Maintain robust development infrastructure",
+        "workflow": [
+          "Infrastructure as Code",
+          "CI/CD pipeline optimization",
+          "Monitoring and alerting",
+          "Developer experience improvement"
+        ],
+        "members": [
+          {
+            "id": "pf001",
+            "name": "Uma Sharma",
+            "role": "Platform Architect",
+            "specialty": "Kubernetes & Cloud",
+            "experience": "8 years"
+          },
+          {
+            "id": "pf002",
+            "name": "Victor Hughes",
+            "role": "Site Reliability Engineer",
+            "specialty": "Monitoring & Alerts",
+            "experience": "6 years"
+          },
+          {
+            "id": "pf003",
+            "name": "Wendy Liu",
+            "role": "Build Engineer",
+            "specialty": "CI/CD & Automation",
+            "experience": "4 years"
+          },
+          {
+            "id": "pf004",
+            "name": "Xavier Ross",
+            "role": "Security Engineer",
+            "specialty": "Infrastructure Security",
+            "experience": "5 years"
+          },
+          {
+            "id": "pf005",
+            "name": "Yara Hassan",
+            "role": "Cloud Engineer",
+            "specialty": "AWS & Terraform",
+            "experience": "3 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pf004",
+        "name": "Xavier Ross",
+        "role": "Security Engineer",
+        "specialty": "Infrastructure Security",
+        "experience": "5 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    },
+    {
+      "company": {
+        "name": "AKAO Innovation Corp",
+        "mission": "Democratizing AI development through innovative tools",
+        "vision": "A world where every developer can build intelligent applications",
+        "values": [
+          "Innovation First - Always push boundaries",
+          "Quality Code - Zero technical debt philosophy",
+          "Team Collaboration - Success through unity",
+          "Customer Focus - User needs drive decisions"
+        ],
+        "policies": {
+          "workHours": "Flexible 40h/week, core hours 10AM-3PM",
+          "codeReview": "All code must pass peer review before merge",
+          "testing": "Test-driven development mandatory",
+          "documentation": "Self-documenting code and comprehensive guides"
+        }
+      },
+      "team": {
+        "id": "platform",
+        "name": "Platform Engineering",
+        "mission": "Maintain robust development infrastructure",
+        "workflow": [
+          "Infrastructure as Code",
+          "CI/CD pipeline optimization",
+          "Monitoring and alerting",
+          "Developer experience improvement"
+        ],
+        "members": [
+          {
+            "id": "pf001",
+            "name": "Uma Sharma",
+            "role": "Platform Architect",
+            "specialty": "Kubernetes & Cloud",
+            "experience": "8 years"
+          },
+          {
+            "id": "pf002",
+            "name": "Victor Hughes",
+            "role": "Site Reliability Engineer",
+            "specialty": "Monitoring & Alerts",
+            "experience": "6 years"
+          },
+          {
+            "id": "pf003",
+            "name": "Wendy Liu",
+            "role": "Build Engineer",
+            "specialty": "CI/CD & Automation",
+            "experience": "4 years"
+          },
+          {
+            "id": "pf004",
+            "name": "Xavier Ross",
+            "role": "Security Engineer",
+            "specialty": "Infrastructure Security",
+            "experience": "5 years"
+          },
+          {
+            "id": "pf005",
+            "name": "Yara Hassan",
+            "role": "Cloud Engineer",
+            "specialty": "AWS & Terraform",
+            "experience": "3 years"
+          }
+        ]
+      },
+      "member": {
+        "id": "pf005",
+        "name": "Yara Hassan",
+        "role": "Cloud Engineer",
+        "specialty": "AWS & Terraform",
+        "experience": "3 years"
+      },
+      "timestamp": "2025-08-22T20:40:41.474Z"
+    }
+  ]
+}

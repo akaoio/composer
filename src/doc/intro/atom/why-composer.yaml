@@ -1,0 +1,4 @@
+title: Why Composer
+content: It combines the simplicity of static site generators with the flexibility of build tools, enabling you to compose content from YAML, JSON, Markdown, and more.
+category: intro
+weight: 2

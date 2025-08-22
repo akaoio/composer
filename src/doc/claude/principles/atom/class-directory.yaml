@@ -1,0 +1,5 @@
+title: "Class = Directory + Method-per-file"
+content: "Every class must be a directory with each method in a separate file, following the AKAO.io pattern for maximum reusability and maintainability."
+principle_number: 1
+critical: true
+weight: 1

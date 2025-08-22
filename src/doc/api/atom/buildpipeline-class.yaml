@@ -1,0 +1,12 @@
+name: BuildPipeline
+description: Manages the build process with configurable tasks
+methods:
+  - name: execute
+    params: ""
+    description: Executes all configured build tasks
+  - name: loadSources
+    params: ""
+    description: Loads source files based on patterns
+  - name: processOutputs
+    params: ""
+    description: Generates output files in configured formats

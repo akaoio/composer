@@ -1,0 +1,11 @@
+title: PM2 Process Manager
+content: Deploy with PM2 for advanced process management, monitoring, and clustering capabilities. Includes built-in log rotation and restart strategies.
+category: service
+weight: 2
+details:
+  start: "pm2 start pm2.config.js"
+  monitoring: "pm2 monit"
+  logs: "pm2 logs composer-watch"
+  restart: "pm2 restart composer-watch"
+  stop: "pm2 stop composer-watch"
+  startup: "pm2 startup && pm2 save"

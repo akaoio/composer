@@ -1,0 +1,4 @@
+title: Installation
+content: Install Composer via npm with `npm install @akaoio/composer`.
+category: usage
+weight: 1

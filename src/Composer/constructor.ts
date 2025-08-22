@@ -1,10 +1,10 @@
-import type { ComposerOptions, CompositionContext } from '../type/index.js'
+import type { RenderContext } from '../type/index.js'
+import type { ComposerOptions } from './index.js'
 
 export function constructor(this: any, options: ComposerOptions = {}) {
   this.options = {
-    particlesPath: options.particlesPath || './particles',
-    componentsPath: options.componentsPath || './components',
-    documentsPath: options.documentsPath || './documents',
+    dataPath: options.dataPath || './data',
+    templatesPath: options.templatesPath || './templates',
     outputPath: options.outputPath || './output',
     watch: options.watch || false,
     debounceMs: options.debounceMs || 1000,
@@ -12,10 +12,11 @@ export function constructor(this: any, options: ComposerOptions = {}) {
   }
 
   this.context = {
-    particles: {},
-    components: {},
-    documents: {}
-  } as CompositionContext
+    data: {},
+    variables: {},
+    functions: {}
+  } as RenderContext
 
   this.watcher = null
+  this.customProcessors = []
 }

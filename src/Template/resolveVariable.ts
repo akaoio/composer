@@ -1,63 +1,83 @@
 import type { TemplateVariable } from '../type/index.js'
 
 export function resolveVariable(this: any, variable: TemplateVariable): string {
-  switch (variable.type) {
-    case 'particle':
-      return resolveParticle.call(this, variable.path)
+  // Try resolving from the full context first, then from context.data
+  const resolveFromRoot = (path: string[], root: any): any => {
+    let current = root
     
-    case 'component':
-      return resolveComponent.call(this, variable.path)
+    for (const segment of path) {
+      if (current == null) {
+        return null
+      }
+      
+      // Handle array indices (numeric strings including negative)
+      if (Array.isArray(current) && /^-?\d+$/.test(segment)) {
+        const index = parseInt(segment, 10)
+        // Handle negative indices (Python-style)
+        const actualIndex = index < 0 ? current.length + index : index
+        if (actualIndex >= 0 && actualIndex < current.length) {
+          current = current[actualIndex]
+        } else {
+          return null
+        }
+      } else if (current && typeof current === 'object' && segment in current) {
+        current = current[segment]
+      } else {
+        return null
+      }
+    }
     
-    case 'custom':
-      return resolveCustom.call(this, variable.path)
-    
-    default:
-      return variable.original
+    return current
   }
-}
 
-function resolveParticle(this: any, path: string[]): string {
-  const [category, name, field] = path
+  // Try resolving from context.data first (for {{title}} -> context.data.title)
+  let result = resolveFromRoot(variable.path, this.context?.data)
   
-  const particle = this.context.particles[category]?.[name]
-  if (!particle) {
-    console.warn(`Particle not found: ${category}.${name}`)
+  // If not found, try from full context (for {{data.title}} -> context.data.title)
+  if (result == null && this.context) {
+    result = resolveFromRoot(variable.path, this.context)
+  }
+  
+  // If still not found, return empty string for missing variables
+  if (result == null) {
     return ''
   }
   
-  const value = particle[field as keyof typeof particle]
-  return typeof value === 'string' ? value : String(value || '')
-}
-
-function resolveComponent(this: any, path: string[]): string {
-  const [name, field] = path
-  
-  const component = this.context.components[name]
-  if (!component) {
-    console.warn(`Component not found: ${name}`)
-    return ''
-  }
-  
-  if (field === 'template' && component.compose?.template) {
-    // Recursively render component template
-    return this.render(component.compose.template)
-  }
-  
-  const value = component[field as keyof typeof component]
-  return typeof value === 'string' ? value : String(value || '')
-}
-
-function resolveCustom(this: any, path: string[]): string {
-  let current: any = this.context
-  
-  for (const segment of path) {
-    if (current && typeof current === 'object' && segment in current) {
-      current = current[segment]
-    } else {
-      console.warn(`Custom path not found: ${path.join('.')}`)
+  // If it's a function, call it
+  if (typeof result === 'function') {
+    try {
+      return String(result())
+    } catch (error) {
+      console.warn(`Error calling function ${variable.path.join('.')}: ${error}`)
       return ''
     }
   }
   
-  return typeof current === 'string' ? current : String(current || '')
+  // Smart object resolution: if result is an object, try to find a meaningful value
+  if (typeof result === 'object' && result !== null && !Array.isArray(result)) {
+    // Check if it's a Promise (for async functions)
+    if (result instanceof Promise || (result.then && typeof result.then === 'function')) {
+      return ''  // Return empty string for Promises
+    }
+    
+    // If the object has a property with the same name as the last segment of the path,
+    // it might be a nested structure where we need to go one level deeper
+    const lastSegment = variable.path[variable.path.length - 1]
+    if (lastSegment in result) {
+      return String(result[lastSegment])
+    }
+    
+    // Try common content properties
+    const contentKeys = ['content', 'value', 'text', 'data']
+    for (const key of contentKeys) {
+      if (key in result) {
+        return String(result[key])
+      }
+    }
+    
+    // If it's still an object, return empty string for cleaner output
+    return ''
+  }
+  
+  return String(result)
 }

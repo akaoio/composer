@@ -1,0 +1,21 @@
+title: Simple Documentation
+content: Generate documentation from YAML and Markdown files
+code: |
+  const config = {
+    sources: {
+      content: {
+        pattern: 'content/**/*.md',
+        parser: 'markdown'
+      },
+      data: {
+        pattern: 'data/**/*.yaml',
+        parser: 'yaml'
+      }
+    },
+    outputs: [
+      {
+        target: 'dist/README.md',
+        format: 'markdown'
+      }
+    ]
+  }

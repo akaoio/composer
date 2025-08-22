@@ -1,0 +1,8 @@
+title: "Development Workflow"
+content: |
+  1. Write test first (TDD)
+  2. Implement in separate method file
+  3. Ensure 100% real implementation
+  4. Complete before moving on
+  5. Keep workspace clean
+weight: 1

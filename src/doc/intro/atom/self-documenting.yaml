@@ -1,0 +1,4 @@
+title: Self-Documenting
+content: This documentation itself is generated using Composer, demonstrating its capabilities through real-world usage.
+category: intro
+weight: 3

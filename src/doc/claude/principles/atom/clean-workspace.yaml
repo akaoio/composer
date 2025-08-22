@@ -1,0 +1,5 @@
+title: "Clean Workspace"
+content: "All temporary files must be in tmp/, keep the workspace pristine and organized."
+principle_number: 3
+critical: true
+weight: 3

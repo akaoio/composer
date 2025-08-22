@@ -2,17 +2,24 @@ import { constructor } from './constructor.js'
 import { render } from './render.js'
 import { parseVariables } from './parseVariables.js'
 import { resolveVariable } from './resolveVariable.js'
-import type { CompositionContext, TemplateVariable } from '../type/index.js'
+import type { RenderContext, TemplateVariable } from '../type/index.js'
 
 export class Template {
-  context!: CompositionContext
+  template: string
+  context?: RenderContext
 
-  constructor(context: CompositionContext) {
-    constructor.call(this, context)
+  constructor(template: string, context?: RenderContext) {
+    this.template = template
+    if (context) {
+      constructor.call(this, context)
+    }
   }
 
-  async render(template: string): Promise<string> {
-    return render.call(this, template)
+  render(context?: RenderContext): string {
+    if (context) {
+      this.context = context
+    }
+    return render.call(this, this.template)
   }
 
   parseVariables(template: string): TemplateVariable[] {

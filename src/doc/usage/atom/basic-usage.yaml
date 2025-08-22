@@ -1,0 +1,4 @@
+title: Basic Usage
+content: Create a `composer.config.js` file to define sources, build tasks, and outputs.
+category: usage
+weight: 2

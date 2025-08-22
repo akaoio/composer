@@ -1,63 +1,42 @@
-export interface Particle {
-  name: string
-  type: string
-  category?: string
-  strength?: number
-  description?: string
-  content: string
-  tags?: string[]
-  metadata?: Record<string, any>
+// Generic data structure - no opinions about content
+export interface DataItem {
+  [key: string]: any
 }
 
-export interface Component {
-  name: string
-  type?: string
-  particles: ParticleReference[]
-  compose?: {
-    template: string
-    [key: string]: any
-  }
+// Generic collection of data items
+export interface DataCollection {
+  [key: string]: DataItem | DataItem[]
 }
 
-export interface ParticleReference {
-  category: string
-  name: string
-  weight?: number
-}
-
-export interface Document {
-  name: string
-  description?: string
-  template: string
-  particles?: ParticleReference[]
-  components?: string[]
-  sections?: DocumentSection[]
-}
-
-export interface DocumentSection {
-  title?: string
-  template?: string
-  particles?: ParticleReference[]
-  components?: string[]
-}
-
-export interface ComposerOptions {
-  particlesPath?: string
-  componentsPath?: string
-  documentsPath?: string
-  outputPath?: string
-  watch?: boolean
-  debounceMs?: number
-}
-
-export interface CompositionContext {
-  particles: Record<string, Record<string, Particle>>
-  components: Record<string, Component>
-  documents?: Record<string, Document>
-}
-
+// Generic template variable - no domain-specific types
 export interface TemplateVariable {
-  type: 'particle' | 'component' | 'custom'
   path: string[]
   original: string
+  value?: any
+}
+
+// Generic context for template rendering
+export interface RenderContext {
+  data: Record<string, any>
+  variables?: Record<string, any>
+  functions?: Record<string, Function>
+}
+
+export interface ImportConfig {
+  source: string
+  alias?: string
+  select?: string
+  type?: 'inline' | 'frontmatter' | 'block'
+}
+
+export interface ImportResult {
+  source: string
+  data: any
+  alias?: string
+}
+
+export interface ImportContext {
+  loadedFiles: Map<string, any>
+  importChain: string[]
+  baseDir: string
 }

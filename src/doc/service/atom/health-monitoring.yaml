@@ -1,0 +1,9 @@
+title: Health Monitoring
+content: Built-in health check endpoint and monitoring capabilities for service reliability. Provides status information and process metrics via HTTP API.
+category: service
+weight: 5
+details:
+  endpoint: "http://localhost:3001/health"
+  response: "JSON with status, PID, uptime, and watching state"
+  heartbeat: "PID file timestamp updated every 30 seconds"
+  monitoring: "Compatible with monitoring tools like Nagios, Zabbix, and Prometheus"

@@ -1,0 +1,8 @@
+title: "Composer Architecture"
+content: |
+  The Composer project follows strict AKAO.io principles:
+  - Each major class (Composer, BuildPipeline, Template) is a directory
+  - Methods are individual TypeScript files
+  - Imports use .js extension even for .ts files
+  - Build outputs to dist/ with CJS, ESM, and types
+weight: 1

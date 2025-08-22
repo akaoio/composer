@@ -1,0 +1,5 @@
+title: "100% Real Implementation"
+content: "No mocks, stubs, or fake code - every implementation must be production-ready."
+principle_number: 4
+critical: true
+weight: 4

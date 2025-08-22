@@ -1,0 +1,13 @@
+title: Key Features
+description: Core features of Composer
+atoms:
+  - features/atom/template-engine
+  - features/atom/multi-format
+  - features/atom/watch-mode
+  - features/atom/build-pipeline
+template: |
+  ## {{title}}
+  
+  {{#each atoms}}
+  - **{{this.title}}**: {{this.content}}
+  {{/each}}

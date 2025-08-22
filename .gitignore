@@ -5,6 +5,7 @@ node_modules/
 dist/
 
 # Temporary files
+teamwork/
 tmp/
 *.log
 *.tmp

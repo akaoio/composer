@@ -1,0 +1,11 @@
+title: Service Configuration
+content: Flexible configuration options for service deployment including paths, debounce timing, and callback functions for custom integrations.
+category: service
+weight: 6
+details:
+  config_file: "composer.config.js (default) or specify custom path"
+  data_path: "Directory to watch for data files"
+  templates_path: "Directory to watch for template files"
+  output_path: "Directory for generated output"
+  debounce_ms: "Milliseconds to wait before rebuilding (default: 1000)"
+  on_rebuild: "Optional callback function triggered after rebuild"

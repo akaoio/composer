@@ -1,0 +1,10 @@
+title: Docker Container
+content: Containerized deployment with Docker for consistent environments and easy scaling. Includes health checks and volume mounting for persistent data.
+category: service
+weight: 3
+details:
+  build: "docker build -f docker/Dockerfile.service -t composer-service ."
+  run: "docker run -d --name composer-watch -v $(pwd):/workspace composer-service"
+  logs: "docker logs -f composer-watch"
+  stop: "docker stop composer-watch"
+  health: "docker exec composer-watch curl -f http://localhost:3001/health"

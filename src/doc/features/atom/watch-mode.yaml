@@ -1,0 +1,4 @@
+title: Watch Mode
+content: Automatic rebuilding when source files change, perfect for development workflows.
+category: features
+weight: 3

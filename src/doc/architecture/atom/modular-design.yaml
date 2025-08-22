@@ -1,0 +1,4 @@
+title: Modular Design
+content: Composer follows a modular architecture with separate components for configuration, build pipeline, and template rendering.
+category: architecture
+weight: 1

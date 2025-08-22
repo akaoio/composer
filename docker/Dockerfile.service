@@ -1,0 +1,36 @@
+# Dockerfile for running Composer as a service
+FROM node:18-alpine
+
+# Install dependencies for file watching
+RUN apk add --no-cache \
+    inotify-tools \
+    tini
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy built application
+COPY dist/ ./dist/
+COPY bin/ ./bin/
+
+# Create directories for data and output
+RUN mkdir -p /data /output /templates
+
+# Use tini for proper signal handling
+ENTRYPOINT ["/sbin/tini", "--"]
+
+# Run the watch service
+CMD ["node", "bin/composer-watch.js", "--daemon", "--health-check", "--port=3001"]
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3001/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
+
+# Expose health check port
+EXPOSE 3001

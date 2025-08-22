@@ -1,0 +1,140 @@
+company:
+  name: AKAO Innovation
+  mission: Democratizing AI through innovative tools
+  vision: Intelligent applications for everyone
+  domain: akao.io
+  values:
+    - Innovation First
+    - Quality Code
+    - Team Unity
+    - Customer Focus
+  policies:
+    hours: Flexible 40h/week
+    review: Peer review mandatory
+    testing: TDD required
+
+teams:
+  - id: frontend
+    name: Frontend Team
+    mission: Beautiful user interfaces
+    members:
+      - id: fe001
+        name: Alice Chen
+        role: Senior Frontend Dev
+        skills: React/TypeScript
+      - id: fe002
+        name: Bob Smith
+        role: UI/UX Developer
+        skills: CSS/Design
+      - id: fe003
+        name: Carol Kim
+        role: Frontend Architect
+        skills: Performance
+      - id: fe004
+        name: David Lee
+        role: Mobile Developer
+        skills: React Native
+      - id: fe005
+        name: Eva Martinez
+        role: Junior Developer
+        skills: HTML/CSS/JS
+        
+  - id: backend
+    name: Backend Team
+    mission: Scalable server infrastructure
+    members:
+      - id: be001
+        name: Frank Zhang
+        role: Backend Architect
+        skills: Microservices
+      - id: be002
+        name: Grace Wilson
+        role: API Developer
+        skills: Node.js/GraphQL
+      - id: be003
+        name: Henry Park
+        role: Database Engineer
+        skills: PostgreSQL
+      - id: be004
+        name: Ivy Patel
+        role: DevOps Engineer
+        skills: AWS/Docker
+      - id: be005
+        name: Jack Brown
+        role: Security Engineer
+        skills: Auth/Encryption
+        
+  - id: ai
+    name: AI/ML Team
+    mission: Cutting-edge AI integration
+    members:
+      - id: ai001
+        name: Kate Singh
+        role: ML Engineer
+        skills: Deep Learning
+      - id: ai002
+        name: Liam Connor
+        role: Data Scientist
+        skills: Analytics
+      - id: ai003
+        name: Maya Johnson
+        role: AI Researcher
+        skills: NLP
+      - id: ai004
+        name: Noah Davis
+        role: MLOps Engineer
+        skills: Model Deploy
+      - id: ai005
+        name: Olivia White
+        role: CV Engineer
+        skills: Computer Vision
+        
+  - id: product
+    name: Product Team
+    mission: Product strategy and UX
+    members:
+      - id: pm001
+        name: Paul Anderson
+        role: Product Manager
+        skills: Strategy
+      - id: pm002
+        name: Quinn Taylor
+        role: UX Designer
+        skills: User Research
+      - id: pm003
+        name: Rachel Green
+        role: Product Analyst
+        skills: Data Analytics
+      - id: pm004
+        name: Sam Miller
+        role: Tech Writer
+        skills: Documentation
+      - id: pm005
+        name: Tina Clark
+        role: QA Engineer
+        skills: Test Automation
+        
+  - id: platform
+    name: Platform Team
+    mission: Development infrastructure
+    members:
+      - id: pf001
+        name: Uma Sharma
+        role: Platform Architect
+        skills: Kubernetes
+      - id: pf002
+        name: Victor Hughes
+        role: SRE
+        skills: Monitoring
+      - id: pf003
+        name: Wendy Liu
+        role: Build Engineer
+        skills: CI/CD
+      - id: pf004
+        name: Xavier Ross
+        role: Security Engineer
+        skills: Infra Security
+      - id: pf005
+        name: Yara Hassan
+        role: Cloud Engineer
+        skills: AWS/Terraform
