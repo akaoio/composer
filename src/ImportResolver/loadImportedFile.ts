@@ -3,21 +3,34 @@ import path from 'path'
 import yaml from 'js-yaml'
 
 export async function loadImportedFile(this: any, filePath: string): Promise<any> {
+  // Normalize path for consistent comparison
+  const normalizedPath = path.resolve(filePath)
+  
   // Check cache first
-  if (this.context.loadedFiles.has(filePath)) {
-    return this.context.loadedFiles.get(filePath)
+  if (this.context.loadedFiles.has(normalizedPath)) {
+    return this.context.loadedFiles.get(normalizedPath)
+  }
+
+  // Check for circular imports
+  if (this.context.importChain && this.context.importChain.includes(normalizedPath)) {
+    throw new Error(`Circular import detected: ${normalizedPath}`)
+  }
+
+  // Add to import chain before processing
+  if (this.context.importChain) {
+    this.context.importChain.push(normalizedPath)
   }
 
   // Check if file exists
   try {
-    await fs.access(filePath)
+    await fs.access(normalizedPath)
   } catch (error) {
-    throw new Error(`Import file not found: ${filePath}`)
+    throw new Error(`Import file not found: ${normalizedPath}`)
   }
 
   // Read file content
-  const content = await fs.readFile(filePath, 'utf-8')
-  const ext = path.extname(filePath).toLowerCase()
+  const content = await fs.readFile(normalizedPath, 'utf-8')
+  const ext = path.extname(normalizedPath).toLowerCase()
   
   let data: any
   
@@ -34,21 +47,26 @@ export async function loadImportedFile(this: any, filePath: string): Promise<any
       
     case '.md':
     case '.markdown':
-      data = parseMarkdownFile.call(this, content, filePath)
+      data = parseMarkdownFile.call(this, content, normalizedPath)
       break
       
     default:
       // Treat as plain text
-      data = { content, filePath }
+      data = { content, filePath: normalizedPath }
   }
 
   // Process nested imports in the loaded file
   if (data && typeof data === 'object') {
-    data = await resolveImportsInData.call(this, data, path.dirname(filePath))
+    data = await resolveImportsInData.call(this, data, path.dirname(normalizedPath))
+  }
+
+  // Remove from import chain after processing
+  if (this.context.importChain) {
+    this.context.importChain.pop()
   }
 
   // Cache the result
-  this.context.loadedFiles.set(filePath, data)
+  this.context.loadedFiles.set(normalizedPath, data)
   
   return data
 }
@@ -110,25 +128,45 @@ async function resolveImportsInData(this: any, data: any, baseDir: string): Prom
   } else {
     // Process object properties
     const resolved: any = {}
+    
+    // First, handle imports to get base data
     for (const [key, value] of Object.entries(data)) {
       if (key === 'import' && typeof value === 'string') {
-        // Replace entire object with imported data
+        // Load imported data and merge it with resolved object
         const importPath = path.resolve(baseDir, value)
-        return await this.loadImportedFile(importPath)
+        const importedData = await this.loadImportedFile(importPath)
+        Object.assign(resolved, importedData)
       } else if (key === 'imports' && Array.isArray(value)) {
         // Handle multiple imports (merge them)
-        const merged: any = {}
         for (const imp of value) {
-          const importPath = path.resolve(baseDir, typeof imp === 'string' ? imp : imp.import)
-          const importedData = await this.loadImportedFile(importPath)
-          Object.assign(merged, importedData)
+          if (typeof imp === 'string') {
+            const importPath = path.resolve(baseDir, imp)
+            const importedData = await this.loadImportedFile(importPath)
+            Object.assign(resolved, importedData)
+          } else if (imp && typeof imp === 'object') {
+            const source = imp.import || imp.source
+            if (source) {
+              const importPath = path.resolve(baseDir, source)
+              const importedData = await this.loadImportedFile(importPath)
+              if (imp.alias) {
+                resolved[imp.alias] = importedData
+              } else {
+                Object.assign(resolved, importedData)
+              }
+            }
+          }
         }
-        return merged
-      } else {
+      }
+    }
+    
+    // Then process other properties (these override imported data)
+    for (const [key, value] of Object.entries(data)) {
+      if (key !== 'import' && key !== 'imports') {
         // Recursively process nested data
         resolved[key] = await resolveImportsInData.call(this, value, baseDir)
       }
     }
+    
     return resolved
   }
 }

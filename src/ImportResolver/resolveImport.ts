@@ -6,6 +6,9 @@ export async function resolveImport(
   importConfig: ImportConfig, 
   baseDir?: string
 ): Promise<ImportResult> {
+  // Reset import chain for new resolution
+  this.context.importChain = []
+  
   const resolveDir = baseDir || this.context.baseDir
   
   // Resolve import path
@@ -13,37 +16,23 @@ export async function resolveImport(
     ? importConfig.source
     : path.resolve(resolveDir, importConfig.source)
 
-  // Check for circular imports
-  if (this.context.importChain.includes(importPath)) {
-    throw new Error(`Circular import detected: ${this.context.importChain.join(' -> ')} -> ${importPath}`)
+  // Load the imported file
+  const importedData = await this.loadImportedFile(importPath)
+  
+  // Apply selector if specified
+  let selectedData = importedData
+  if (importConfig.select) {
+    selectedData = this.selectFromData(importedData, importConfig.select)
   }
 
-  try {
-    // Add to import chain
-    this.context.importChain.push(importPath)
-
-    // Load the imported file
-    const importedData = await this.loadImportedFile(importPath)
-    
-    // Apply selector if specified
-    let selectedData = importedData
-    if (importConfig.select) {
-      selectedData = this.selectFromData(importedData, importConfig.select)
-    }
-
-    // Apply alias if specified
-    const result: ImportResult = {
-      source: importPath,
-      data: selectedData,
-      alias: importConfig.alias
-    }
-
-    return result
-
-  } finally {
-    // Remove from import chain
-    this.context.importChain.pop()
+  // Apply alias if specified
+  const result: ImportResult = {
+    source: importPath,
+    data: selectedData,
+    alias: importConfig.alias
   }
+
+  return result
 }
 
 function selectFromData(data: any, selector: string): any {
