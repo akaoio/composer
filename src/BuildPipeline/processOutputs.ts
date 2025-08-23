@@ -13,8 +13,15 @@ export async function processOutputs(this: any): Promise<Map<string, string>> {
       const templatePath = path.resolve(this.config.options?.baseDir || process.cwd(), outputConfig.template)
       const templateContent = await fs.readFile(templatePath, 'utf-8')
       
-      // Render template with context
-      result = await this.renderTemplate(templateContent, this.context)
+      // Determine template context - use specific data source if specified
+      let templateContext = this.context
+      if (outputConfig.data) {
+        // Use specific data source from context
+        templateContext = this.context.sources[outputConfig.data] || this.context
+      }
+      
+      // Render template with appropriate context
+      result = await this.renderTemplate(templateContent, templateContext)
     } else if (outputConfig.processor) {
       // Get processor
       const processor = this.processors.get(outputConfig.processor)
@@ -65,7 +72,11 @@ export async function processOutputs(this: any): Promise<Map<string, string>> {
       // Use filename as key for easier testing
       const outputKey = path.basename(target.path)
       outputs.set(outputKey, finalContent)
-      console.log(`✅ Generated: ${targetPath}`)
+      
+      // Only log if not in silent mode
+      if (!this.config.options?.silent) {
+        console.log(`✅ Generated: ${targetPath}`)
+      }
     }
   }
   

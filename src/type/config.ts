@@ -24,6 +24,7 @@ export interface OutputConfig {
   format: 'markdown' | 'json' | 'html' | 'yaml' | string
   processor: string
   template?: string
+  data?: string
   options?: Record<string, any>
 }
 
@@ -59,6 +60,7 @@ export interface ComposerConfig {
     baseDir?: string
     cacheDir?: string
     verbose?: boolean
+    silent?: boolean
     [key: string]: any
   }
 }

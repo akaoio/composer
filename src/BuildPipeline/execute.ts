@@ -1,5 +1,7 @@
 export async function execute(this: any): Promise<Map<string, string>> {
-  console.log('🏗️ Starting build pipeline...')
+  if (!this.config.options?.silent) {
+    console.log('🏗️ Starting build pipeline...')
+  }
   
   // Load all sources first
   await this.loadSources()
@@ -10,9 +12,13 @@ export async function execute(this: any): Promise<Map<string, string>> {
   }
   
   // Process outputs
-  console.log('📦 Processing outputs...')
+  if (!this.config.options?.silent) {
+    console.log('📦 Processing outputs...')
+  }
   const outputs = await this.processOutputs()
   
-  console.log(`✅ Build completed. Generated ${outputs.size} outputs.`)
+  if (!this.config.options?.silent) {
+    console.log(`✅ Build completed. Generated ${outputs.size} outputs.`)
+  }
   return outputs
 }

@@ -6,7 +6,9 @@ import type { SourceConfig } from '../type/config.js'
 import { ImportResolver } from '../ImportResolver/index.js'
 
 export async function loadSources(this: any): Promise<void> {
-  console.log('📁 Loading sources...')
+  if (!this.config.options?.silent) {
+    console.log('📁 Loading sources...')
+  }
   
   const importResolver = new ImportResolver()
   

@@ -77,7 +77,8 @@ module.exports = {
   outputs: [
     {
       target: 'README.md',
-      template: 'templates/readme.md'
+      template: 'templates/readme.md',
+      data: 'docs'
     }
   ],
   options: {
@@ -172,6 +173,11 @@ async function buildDocs(configPath = 'composer.config.js', options = {}) {
       process.exit(1)
     }
     
+    // Merge CLI options into config
+    if (!config.options) config.options = {}
+    if (options.silent) config.options.silent = true
+    if (options.verbose) config.options.verbose = true
+    
     // Build
     const pipeline = new BuildPipeline(config)
     const result = await pipeline.execute()
@@ -216,9 +222,13 @@ async function watchDocs(configPath = 'composer.config.js', options = {}) {
     if (building) return
     
     building = true
-    console.log(`\n📝 File changed: ${path}`)
+    if (!options.silent) {
+      console.log(`\n📝 File changed: ${path}`)
+    }
     await buildDocs(configPath, { ...options, silent: true })
-    console.log('✅ Rebuild complete')
+    if (!options.silent) {
+      console.log('✅ Rebuild complete')
+    }
     building = false
   })
   
