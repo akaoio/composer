@@ -1,0 +1,17 @@
+title: "CLI Usage"
+content: |
+  ```bash
+  # Initialize a new project
+  composer init
+  
+  # Build documentation
+  composer build
+  
+  # Watch for changes
+  composer watch
+  
+  # Show help
+  composer help
+  ```
+type: "usage"
+platform: "cli"

@@ -37,6 +37,14 @@ npm install @akaoio/composer
 
 
 
+### Install CLI Globally
+
+```bash
+npm install -g @akaoio/composer
+```
+
+
+
 ### Install via Deno
 
 ```typescript
@@ -122,6 +130,24 @@ import { watch } from 'fs'
 composer.watch((outputs) => {
   console.log(`Rebuilt ${outputs.size} files`)
 })
+```
+
+
+
+### CLI Usage
+
+```bash
+# Initialize a new project
+composer init
+
+# Build documentation
+composer build
+
+# Watch for changes
+composer watch
+
+# Show help
+composer help
 ```
 
 

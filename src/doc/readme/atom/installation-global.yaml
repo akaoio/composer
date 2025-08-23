@@ -1,0 +1,7 @@
+title: "Install CLI Globally"
+content: |
+  ```bash
+  npm install -g @akaoio/composer
+  ```
+type: "installation"
+runtime: "cli"
