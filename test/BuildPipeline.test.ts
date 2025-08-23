@@ -59,7 +59,8 @@ describe('BuildPipeline', () => {
       await pipeline.loadSources()
       
       expect(pipeline.context.sources.particles).toBeDefined()
-      expect(pipeline.context.sources.particles).toHaveLength(1)
+      // Single file sources are flattened to object, not array
+      expect(pipeline.context.sources.particles.name).toBe('test')
     })
 
     test('should load JSON sources', async () => {
@@ -85,8 +86,8 @@ describe('BuildPipeline', () => {
       await pipeline.loadSources()
       
       expect(pipeline.context.sources.data).toBeDefined()
-      expect(pipeline.context.sources.data).toHaveLength(1)
-      expect(pipeline.context.sources.data[0].name).toBe('test')
+      // Single file sources are flattened to object, not array
+      expect(pipeline.context.sources.data.name).toBe('test')
     })
 
     test('should load Markdown sources', async () => {
@@ -112,7 +113,8 @@ describe('BuildPipeline', () => {
       await pipeline.loadSources()
       
       expect(pipeline.context.sources.docs).toBeDefined()
-      expect(pipeline.context.sources.docs).toHaveLength(1)
+      // Single file sources are flattened to object, not array
+      expect(pipeline.context.sources.docs.name).toBe('readme')
     })
 
     test('should apply source transformations', async () => {
@@ -141,7 +143,7 @@ describe('BuildPipeline', () => {
 
       await pipeline.loadSources()
       
-      const source = pipeline.context.sources.content[0]
+      const source = pipeline.context.sources.content
       expect(source.title).toBe('test-doc')
       expect(source.body).toContain('Content here')
       expect(source.path).toContain('test-doc.md')

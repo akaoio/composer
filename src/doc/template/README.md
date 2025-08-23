@@ -1,102 +1,59 @@
-# {{project.name}}
+# {{readmeTitle.content}}
 
-> {{project.description}}
+> {{readmeTagline.content}}
 
-{{introduction.content}}
-
-## Features
+## ✨ Features
 
 {{#each features}}
-- **{{title}}**: {{content}}
+### {{icon}} {{title}}
+
+{{content}}
+
 {{/each}}
 
-## Installation
+## 📦 Installation
 
-```bash
-npm install {{project.package}}
-```
-
-## Quick Start
-
-```javascript
-import { Composer } from '{{project.package}}'
-
-const composer = new Composer({
-  dataPath: './data',
-  templatesPath: './templates',
-  outputPath: './dist'
-})
-
-// Build your content
-await composer.render()
-```
-
-## Documentation
-
-This documentation is generated using Composer itself! Check out the `src/doc/` directory to see how it works.
-
-## Architecture
-
-{{architecture.description}}
-
-### Core Components
-
-{{#each architecture.components}}
-- **{{name}}**: {{description}}
-{{/each}}
-
-## Examples
-
-{{#each examples}}
+{{#each installations}}
 ### {{title}}
 
 {{content}}
 
-```javascript
-{{code}}
-```
-
 {{/each}}
 
-## API Reference
+## 🚀 Usage
 
-{{#each api.classes}}
-### {{name}}
-
-{{description}}
-
-#### Methods
-
-{{#each methods}}
-- `{{name}}({{params}})`: {{description}}
-{{/each}}
-
-{{/each}}
-
-## Service Deployment
-
-{{#each services}}
+{{#each usages}}
 ### {{title}}
 
 {{content}}
 
-{{#if details}}
-**Commands:**
-{{#each details}}
-- **{{@key}}**: `{{this}}`
-{{/each}}
-{{/if}}
-
 {{/each}}
 
-## Contributing
+## 🖥️ Server Deployment
 
-Contributions are welcome! Please read our contributing guidelines.
+{{servers.content}}
 
-## License
+## 🤝 Contributing
+
+{{#each contributing}}
+### {{title}}
+
+{{content}}
+
+{{/each}}
+
+## 📄 License
 
 {{project.license}}
+
+## 🔗 Links
+
+- **Repository**: {{project.repository}}
+- **NPM Package**: https://www.npmjs.com/package/{{project.name}}
+- **Documentation**: Generated using Composer itself!
 
 ---
 
 *Generated with ❤️ by {{project.name}} v{{project.version}}*
+
+*This README demonstrates atomic documentation - every section is composed from individual YAML files in `src/doc/readme/atom/`*

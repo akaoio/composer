@@ -1,0 +1,7 @@
+title: "Install via NPM"
+content: |
+  ```bash
+  npm install @akaoio/composer
+  ```
+type: "installation"
+runtime: "npm"

@@ -1,11 +1,11 @@
-export async function generateDynamicTargets(this: any, targetConfig: any, result: any): Promise<Array<{ path: string; content?: string; options?: any }>> {
+export async function generateDynamicTargets(this: any, targetConfig: any, result: any): Promise<Array<{ path: string; content?: string; options?: any; context?: any }>> {
   const targets: Array<{ path: string; content?: string; options?: any }> = []
   const data = this.getDataForPattern(targetConfig.forEach, result)
   
   if (Array.isArray(data)) {
     for (let i = 0; i < data.length; i++) {
       const item = data[i]
-      const context = { item, index: i, data }
+      const context = { item, index: i, data, ...item }
       
       const targetPath = await this.renderTemplate(targetConfig.pattern, context)
       const content = targetConfig.contentTemplate 
@@ -15,7 +15,8 @@ export async function generateDynamicTargets(this: any, targetConfig: any, resul
       targets.push({
         path: targetPath,
         content,
-        options: targetConfig.options
+        options: targetConfig.options,
+        context  // Pass context for template rendering
       })
     }
   } else if (typeof data === 'object') {

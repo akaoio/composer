@@ -1,0 +1,23 @@
+title: "Bun Module Usage"
+content: |
+  ```typescript
+  import { Composer, BuildPipeline, ConfigLoader } from '@akaoio/composer'
+  
+  // Bun with TypeScript support
+  const composer = new Composer({
+    dataPath: './data',
+    templatesPath: './templates',
+    outputPath: './dist'
+  })
+  
+  await composer.render()
+  
+  // Hot reload with Bun watch
+  import { watch } from 'fs'
+  
+  composer.watch((outputs) => {
+    console.log(`Rebuilt ${outputs.size} files`)
+  })
+  ```
+type: "usage"
+runtime: "bun"

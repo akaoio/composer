@@ -108,7 +108,7 @@ export async function loadSources(this: any): Promise<void> {
       }
     }
     
-    // Store as array for better handling of bulk operations
-    this.context.sources[name] = sourceData
+    // Store as single object if only one file, otherwise as array
+    this.context.sources[name] = sourceData.length === 1 ? sourceData[0] : sourceData
   }
 }

@@ -57,8 +57,9 @@ export function validateConfig(this: any, config: ComposerConfig): void {
       throw new Error('Each output must define a target')
     }
     
-    if (!output.processor) {
-      throw new Error('Each output must define a processor')
+    // Output must have either processor or template
+    if (!output.processor && !output.template) {
+      throw new Error('Each output must define either a processor or a template')
     }
   }
 }

@@ -1,0 +1,4 @@
+title: "Real-time Building" 
+content: "Watch mode with hot reload, file change detection, and incremental builds."
+icon: "⚡"
+type: "feature"

@@ -1,0 +1,30 @@
+{
+  "team_id": "market-intelligence",
+  "team_name": "Market Intelligence Team",
+  "mission": "Provide actionable market insights and competitive intelligence",
+  "established": "2024-01-15",
+  "budget": {
+    "annual": 3000000,
+    "quarterly": 750000,
+    "research": 300000
+  },
+  "performance": {
+    "accuracy": 0.85,
+    "timeliness": 0.92,
+    "actionability": 0.78
+  },
+  "data_sources": {
+    "primary": ["customer-interviews", "surveys", "focus-groups"],
+    "secondary": ["industry-reports", "competitor-filings", "news-feeds"],
+    "proprietary": ["web-scraping", "social-listening", "patent-analysis"]
+  },
+  "members": [
+    "import:../agents/market/market-analyst.json",
+    "import:../agents/market/analyst.json"
+  ],
+  "deliverables": {
+    "daily": ["market-pulse", "competitor-moves"],
+    "weekly": ["trend-report", "opportunity-scan"],
+    "monthly": ["comprehensive-analysis", "strategic-recommendations"]
+  }
+}

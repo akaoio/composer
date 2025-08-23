@@ -8,6 +8,8 @@ This file provides guidance to Claude AI when working with the {{project.name}} 
 
 **Version**: {{project.version}}
 **License**: {{project.license}}
+**Author**: {{project.author}}
+**Repository**: {{project.repository}}
 
 ## Core Development Principles
 
@@ -16,22 +18,8 @@ This file provides guidance to Claude AI when working with the {{project.name}} 
 
 {{content}}
 
-{{#if importance}}
-**Importance**: {{importance}}
-{{/if}}
-
-{{#if examples}}
-#### Examples:
-{{#each examples}}
-```{{language}}
-{{code}}
-```
-{{/each}}
-{{/if}}
-
-{{#if antiPatterns}}
-#### Anti-Patterns to Avoid:
-{{#list antiPatterns}}
+{{#if critical}}
+**Critical**: {{critical}}
 {{/if}}
 
 {{/each}}
@@ -41,54 +29,35 @@ This file provides guidance to Claude AI when working with the {{project.name}} 
 {{#each patterns}}
 ### {{title}}
 
-{{description}}
+{{content}}
 
-{{#if structure}}
-#### Structure:
+{{#if example}}
+Example:
 ```
-{{structure}}
+{{example}}
 ```
-{{/if}}
-
-{{#if benefits}}
-#### Benefits:
-{{#list benefits}}
-{{/if}}
-
-{{#if usage}}
-#### Usage:
-{{usage}}
 {{/if}}
 
 {{/each}}
 
 ## Project Architecture
 
-{{#each architecture}}
-### {{title}}
-
-{{description}}
-
-{{#if details}}
-{{#list details}}
-{{/if}}
-
-{{/each}}
+{{architecture.content}}
 
 ## Testing Requirements
 
 {{#each testing}}
 ### {{title}}
 
-{{description}}
+{{content}}
 
 {{#if importance}}
 **Importance**: {{importance}}
 {{/if}}
 
 {{#if example}}
-#### Example:
-```javascript
+Example:
+```
 {{example}}
 ```
 {{/if}}
@@ -100,56 +69,32 @@ This file provides guidance to Claude AI when working with the {{project.name}} 
 {{#each workflow}}
 ### {{title}}
 
-{{#each steps}}
-{{@index}}. {{this}}
-{{/each}}
-
-{{#if checklist}}
-#### Checklist:
-{{#list checklist}}
-{{/if}}
-
-{{/each}}
-
-## Code Examples
-
-{{#each examples}}
-### {{title}}
-
-{{description}}
-
-```{{language}}
-{{code}}
-```
+{{content}}
 
 {{/each}}
 
 ## File Organization
 
 ```
-{{fileStructure.src.structure}}
+src/
+  BuildPipeline/
+    index.ts         # Class definition
+    constructor.ts   # Constructor
+    execute.ts       # execute() method
+    loadSources.ts   # loadSources() method
+  Composer/
+    index.ts
+    constructor.ts
+    render.ts
+    watch.ts
+  Template/
+    index.ts
+    constructor.ts
+    render.ts
+    parseVariables.ts
+    resolveVariable.ts
+    renderWithLoops.ts  # Loop processing
 ```
-
-{{fileStructure.src.description}}
-
-## Anti-Patterns to Avoid
-
-{{#each antiPatterns}}
-### ❌ {{title}}
-
-**Wrong:**
-```javascript
-{{wrong}}
-```
-
-**Right:**
-```javascript
-{{right}}
-```
-
-**Reason:** {{reason}}
-
-{{/each}}
 
 ## Common Commands
 
@@ -158,6 +103,7 @@ npm run build    # Compile TypeScript
 npm test         # Run all tests
 npm run lint     # Check code style
 npm run dev      # Development mode
+npm run docs:build  # Generate documentation
 ```
 
 ## Notes for AI Agents

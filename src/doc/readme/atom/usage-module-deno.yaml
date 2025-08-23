@@ -1,0 +1,21 @@
+title: "Deno Module Usage"
+content: |
+  ```typescript
+  import { Composer, BuildPipeline } from "npm:@akaoio/composer@latest"
+  
+  // Deno with permissions
+  const composer = new Composer({
+    dataPath: './data',
+    templatesPath: './templates',
+    outputPath: './dist'
+  })
+  
+  await composer.render()
+  ```
+  
+  **Run with permissions:**
+  ```bash
+  deno run --allow-read --allow-write --allow-env your-script.ts
+  ```
+type: "usage"
+runtime: "deno"

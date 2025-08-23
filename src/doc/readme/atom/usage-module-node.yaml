@@ -1,0 +1,22 @@
+title: "Node.js Module Usage"
+content: |
+  ```javascript
+  const { Composer, BuildPipeline, ConfigLoader } = require('@akaoio/composer')
+  
+  // Option 1: Simple usage
+  const composer = new Composer({
+    dataPath: './data',
+    templatesPath: './templates', 
+    outputPath: './dist'
+  })
+  
+  await composer.render()
+  
+  // Option 2: Configuration-based
+  const loader = new ConfigLoader('./composer.config.js')
+  const config = await loader.loadConfig()
+  const pipeline = new BuildPipeline(config)
+  await pipeline.execute()
+  ```
+type: "usage"
+runtime: "node"

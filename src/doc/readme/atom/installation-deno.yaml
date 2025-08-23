@@ -1,0 +1,7 @@
+title: "Install via Deno"
+content: |
+  ```typescript
+  import { Composer } from "npm:@akaoio/composer@latest"
+  ```
+type: "installation"
+runtime: "deno"

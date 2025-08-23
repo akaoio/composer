@@ -82,20 +82,20 @@ module.exports = {
     tasks: []
   },
 
-  // Output generation - pure config, no JS orchestrators
+  // Output generation - use templates with loaded data
   outputs: [
-    // Generate README.md
+    // Generate README.md from template
     {
       target: 'README.md',
-      format: 'markdown',
-      processor: 'markdown-processor'
+      template: 'src/doc/template/README.md',
+      format: 'markdown'
     },
-
-    // Generate CLAUDE.md
+    
+    // Generate CLAUDE.md from template
     {
       target: 'CLAUDE.md',
-      format: 'markdown', 
-      processor: 'markdown-processor'
+      template: 'src/doc/template/CLAUDE.md',
+      format: 'markdown'
     }
   ],
 

@@ -44,27 +44,7 @@ export async function loadImportedFile(this: any, filePath: string): Promise<any
 
   // Process nested imports in the loaded file
   if (data && typeof data === 'object') {
-    const nestedImports = this.parseImports(content, getFormatFromExtension.call(this, ext))
-    
-    if (nestedImports.length > 0) {
-      const baseDir = path.dirname(filePath)
-      
-      // Store original data before merging imports
-      const originalData = { ...data }
-      
-      for (const importConfig of nestedImports) {
-        const importResult = await this.resolveImport(importConfig, baseDir)
-        
-        if (importConfig.alias) {
-          data[importConfig.alias] = importResult.data
-        } else {
-          // Merge imported data - imported data provides base, original data overrides
-          if (typeof importResult.data === 'object' && !Array.isArray(importResult.data)) {
-            Object.assign(data, importResult.data, originalData)
-          }
-        }
-      }
-    }
+    data = await resolveImportsInData.call(this, data, path.dirname(filePath))
   }
 
   // Cache the result
@@ -96,6 +76,61 @@ function parseMarkdownFile(this: any, content: string, filePath: string): any {
   }
 
   return result
+}
+
+async function resolveImportsInData(this: any, data: any, baseDir: string): Promise<any> {
+  // Handle string imports like "import:path/to/file"
+  if (typeof data === 'string' && data.startsWith('import:')) {
+    const importPath = path.resolve(baseDir, data.substring(7))
+    return await this.loadImportedFile(importPath)
+  }
+  
+  if (!data || typeof data !== 'object') return data
+
+  if (Array.isArray(data)) {
+    // Process array items
+    const resolved = []
+    for (const item of data) {
+      if (typeof item === 'string' && item.startsWith('import:')) {
+        // Handle string import directive
+        const importPath = path.resolve(baseDir, item.substring(7))
+        const importedData = await this.loadImportedFile(importPath)
+        resolved.push(importedData)
+      } else if (item && typeof item === 'object' && item.import) {
+        // Replace import directive with loaded data
+        const importPath = path.resolve(baseDir, item.import)
+        const importedData = await this.loadImportedFile(importPath)
+        resolved.push(importedData)
+      } else {
+        // Recursively process nested data
+        resolved.push(await resolveImportsInData.call(this, item, baseDir))
+      }
+    }
+    return resolved
+  } else {
+    // Process object properties
+    const resolved: any = {}
+    for (const [key, value] of Object.entries(data)) {
+      if (key === 'import' && typeof value === 'string') {
+        // Replace entire object with imported data
+        const importPath = path.resolve(baseDir, value)
+        return await this.loadImportedFile(importPath)
+      } else if (key === 'imports' && Array.isArray(value)) {
+        // Handle multiple imports (merge them)
+        const merged: any = {}
+        for (const imp of value) {
+          const importPath = path.resolve(baseDir, typeof imp === 'string' ? imp : imp.import)
+          const importedData = await this.loadImportedFile(importPath)
+          Object.assign(merged, importedData)
+        }
+        return merged
+      } else {
+        // Recursively process nested data
+        resolved[key] = await resolveImportsInData.call(this, value, baseDir)
+      }
+    }
+    return resolved
+  }
 }
 
 function getFormatFromExtension(this: any, ext: string): 'yaml' | 'json' | 'markdown' {

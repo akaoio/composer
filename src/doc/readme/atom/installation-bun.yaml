@@ -1,0 +1,7 @@
+title: "Install via Bun"
+content: |
+  ```bash
+  bun add @akaoio/composer
+  ```
+type: "installation"
+runtime: "bun"

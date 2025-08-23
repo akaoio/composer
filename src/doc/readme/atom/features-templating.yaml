@@ -1,0 +1,4 @@
+title: "Advanced Templating"
+content: "Supports nested loops, conditionals, variable substitution, and complex data transformations."
+icon: "📝"
+type: "feature"

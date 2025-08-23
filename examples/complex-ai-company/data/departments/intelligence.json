@@ -1,0 +1,32 @@
+{
+  "department_id": "intelligence",
+  "department_name": "Market & Competitive Intelligence",
+  "color": "purple",
+  "leadership": {
+    "head": "market-analyst",
+    "deputy": "analyst",
+    "advisors": ["external-consultant-1"]
+  },
+  "objectives": {
+    "primary": "Provide actionable intelligence for strategic decisions",
+    "secondary": ["Competitive monitoring", "Trend identification", "Risk assessment"],
+    "kpis": {
+      "prediction_accuracy": 0.82,
+      "insights_per_quarter": 150,
+      "decision_influence_rate": 0.73
+    }
+  },
+  "teams": [
+    "import:../teams/market-team.json"
+  ],
+  "capabilities": {
+    "collection": ["OSINT", "HUMINT", "SIGINT", "TECHINT"],
+    "analysis": ["Predictive", "Descriptive", "Prescriptive", "Diagnostic"],
+    "dissemination": ["Reports", "Dashboards", "Alerts", "Briefings"]
+  },
+  "partnerships": {
+    "data_providers": ["Bloomberg", "Gartner", "Forrester"],
+    "research_firms": ["McKinsey", "BCG", "Bain"],
+    "universities": ["MIT", "Stanford", "Harvard"]
+  }
+}

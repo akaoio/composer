@@ -28,20 +28,34 @@ function parseYamlImports(this: any, content: string): ImportConfig[] {
     const data = yaml.load(content) as any
     const imports: ImportConfig[] = []
 
-    if (data && typeof data === 'object') {
-      // Single import
-      if (data.import) {
-        imports.push(normalizeImportConfig.call(this, data.import))
-      }
-      
-      // Multiple imports
-      if (data.imports && Array.isArray(data.imports)) {
-        for (const imp of data.imports) {
-          imports.push(normalizeImportConfig.call(this, imp))
-        }
+    // Recursively find all import directives
+    function findImports(obj: any, currentPath: string[] = []): void {
+      if (!obj || typeof obj !== 'object') return
+
+      if (Array.isArray(obj)) {
+        obj.forEach((item, index) => {
+          if (item && typeof item === 'object' && item.import) {
+            imports.push(normalizeImportConfig.call(this, item.import))
+          } else {
+            findImports(item, [...currentPath, String(index)])
+          }
+        })
+      } else {
+        Object.entries(obj).forEach(([key, value]) => {
+          if (key === 'import' && typeof value === 'string') {
+            imports.push(normalizeImportConfig.call(this, value))
+          } else if (key === 'imports' && Array.isArray(value)) {
+            value.forEach(imp => {
+              imports.push(normalizeImportConfig.call(this, imp))
+            })
+          } else {
+            findImports(value, [...currentPath, key])
+          }
+        })
       }
     }
 
+    findImports(data)
     return imports
   } catch (error) {
     return []
@@ -53,20 +67,40 @@ function parseJsonImports(this: any, content: string): ImportConfig[] {
     const data = JSON.parse(content)
     const imports: ImportConfig[] = []
 
-    if (data && typeof data === 'object') {
-      // Single import
-      if (data.import) {
-        imports.push(normalizeImportConfig.call(this, data.import))
-      }
-      
-      // Multiple imports
-      if (data.imports && Array.isArray(data.imports)) {
-        for (const imp of data.imports) {
-          imports.push(normalizeImportConfig.call(this, imp))
-        }
+    // Recursively find all import directives (same as YAML)
+    function findImports(obj: any, currentPath: string[] = []): void {
+      if (!obj || typeof obj !== 'object') return
+
+      if (Array.isArray(obj)) {
+        obj.forEach((item, index) => {
+          if (typeof item === 'string' && item.startsWith('import:')) {
+            // Handle string imports like "import:../path/to/file.json"
+            imports.push(normalizeImportConfig.call(this, item.substring(7)))
+          } else if (item && typeof item === 'object' && item.import) {
+            imports.push(normalizeImportConfig.call(this, item.import))
+          } else {
+            findImports(item, [...currentPath, String(index)])
+          }
+        })
+      } else {
+        Object.entries(obj).forEach(([key, value]) => {
+          if (key === 'import' && typeof value === 'string') {
+            imports.push(normalizeImportConfig.call(this, value))
+          } else if (key === 'imports' && Array.isArray(value)) {
+            value.forEach(imp => {
+              imports.push(normalizeImportConfig.call(this, imp))
+            })
+          } else if (typeof value === 'string' && value.startsWith('import:')) {
+            // Handle string imports in values
+            imports.push(normalizeImportConfig.call(this, value.substring(7)))
+          } else {
+            findImports(value, [...currentPath, key])
+          }
+        })
       }
     }
 
+    findImports(data)
     return imports
   } catch (error) {
     return []

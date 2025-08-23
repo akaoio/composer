@@ -1,1 +1,164 @@
-{"sources":{"project":[{"name":"@akaoio/composer","description":"A powerful build system and content pipeline for generating documentation from multiple data sources","version":"0.2.0","package":"@akaoio/composer","license":"MIT","author":"AKAO Team","repository":"https://github.com/akaoio/composer","_meta":{"file":"src/doc/config/project.yaml","fullPath":"/home/x/Projects/composer/src/doc/config/project.yaml","source":"project","lastModified":"2025-08-22T18:49:59.009Z"}}],"principles":[{"title":"Zero Technical Debt","content":"Complete every task fully before moving on - no TODO, FIXME, or placeholder code allowed.","principle_number":2,"critical":true,"weight":2,"number":2,"_meta":{"file":"src/doc/claude/principles/atom/zero-debt.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/principles/atom/zero-debt.yaml","source":"principles","lastModified":"2025-08-22T19:15:12.009Z"}},{"title":"100% Real Implementation","content":"No mocks, stubs, or fake code - every implementation must be production-ready.","principle_number":4,"critical":true,"weight":4,"number":4,"_meta":{"file":"src/doc/claude/principles/atom/real-implementation.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/principles/atom/real-implementation.yaml","source":"principles","lastModified":"2025-08-22T19:15:30.769Z"}},{"title":"Clean Workspace","content":"All temporary files must be in tmp/, keep the workspace pristine and organized.","principle_number":3,"critical":true,"weight":3,"number":3,"_meta":{"file":"src/doc/claude/principles/atom/clean-workspace.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/principles/atom/clean-workspace.yaml","source":"principles","lastModified":"2025-08-22T19:15:21.189Z"}},{"title":"Class = Directory + Method-per-file","content":"Every class must be a directory with each method in a separate file, following the AKAO.io pattern for maximum reusability and maintainability.","principle_number":1,"critical":true,"weight":1,"number":1,"_meta":{"file":"src/doc/claude/principles/atom/class-directory.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/principles/atom/class-directory.yaml","source":"principles","lastModified":"2025-08-22T19:15:03.259Z"}}],"patterns":[{"title":"Naming Convention","content":"Use singular forms and single words:\n- User not Users\n- get not getUser\n- save not saveData\nLong names split into directories:\n- user/profile/update.ts not updateUserProfile.ts\n","weight":2,"_meta":{"file":"src/doc/claude/patterns/atom/naming-convention.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/patterns/atom/naming-convention.yaml","source":"patterns","lastModified":"2025-08-22T19:15:53.542Z"}},{"title":"Class Structure Pattern","content":"Classes act as containers that import and delegate to method files:\n- index.ts contains only class definition and delegation\n- Each method lives in its own file with full logic\n- Constructor logic in constructor.ts\n","example":"Composer/\n  index.ts         # Class container\n  constructor.ts   # Constructor logic\n  loadData.ts      # loadData() method\n  render.ts        # render() method\n","weight":1,"_meta":{"file":"src/doc/claude/patterns/atom/class-structure.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/patterns/atom/class-structure.yaml","source":"patterns","lastModified":"2025-08-22T19:15:43.019Z"}}],"testing":[{"title":"Test File Structure","content":"Each method has its own test file: save.ts → save.test.ts in the same directory.","example":"Composer/\n  render.ts\n  render.test.ts\n  loadData.ts\n  loadData.test.ts\n","weight":2,"_meta":{"file":"src/doc/claude/testing/atom/test-structure.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/testing/atom/test-structure.yaml","source":"testing","lastModified":"2025-08-22T19:16:12.352Z"}},{"title":"Test-Driven Development","content":"Write tests BEFORE implementation - Red, Green, Refactor cycle prevents architecture drift.","importance":"critical","weight":1,"_meta":{"file":"src/doc/claude/testing/atom/tdd-requirement.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/testing/atom/tdd-requirement.yaml","source":"testing","lastModified":"2025-08-22T19:16:03.309Z"}}],"workflow":[{"title":"Development Workflow","content":"1. Write test first (TDD)\n2. Implement in separate method file\n3. Ensure 100% real implementation\n4. Complete before moving on\n5. Keep workspace clean\n","weight":1,"_meta":{"file":"src/doc/claude/workflow/atom/development-flow.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/workflow/atom/development-flow.yaml","source":"workflow","lastModified":"2025-08-22T19:16:21.759Z"}},{"title":"Pre-Commit Checklist","content":"Before any commit:\n✓ Tests pass\n✓ No TODO/FIXME\n✓ No console.log debug\n✓ Clean workspace\n✓ Proper file structure\n","weight":2,"_meta":{"file":"src/doc/claude/workflow/atom/checklist.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/workflow/atom/checklist.yaml","source":"workflow","lastModified":"2025-08-22T19:16:31.172Z"}}],"architecture":[{"title":"Composer Architecture","content":"The Composer project follows strict AKAO.io principles:\n- Each major class (Composer, BuildPipeline, Template) is a directory\n- Methods are individual TypeScript files\n- Imports use .js extension even for .ts files\n- Build outputs to dist/ with CJS, ESM, and types\n","weight":1,"_meta":{"file":"src/doc/claude/architecture/atom/composer-structure.yaml","fullPath":"/home/x/Projects/composer/src/doc/claude/architecture/atom/composer-structure.yaml","source":"architecture","lastModified":"2025-08-22T19:16:42.488Z"}}],"services":[{"title":"Watch Daemon","content":"Dedicated daemon script for running Composer watch as a background service with PID management, signal handling, and graceful shutdown.","category":"service","weight":4,"details":{"executable":"bin/composer-watch.js","daemon_mode":"--daemon","pid_file":"--pid=/tmp/composer-watch.pid","log_file":"--log=/var/log/composer-watch.log","health_check":"--health-check --port=3001","signals":"SIGTERM (graceful shutdown), SIGINT (interrupt), SIGHUP (reload config)"},"_meta":{"file":"src/doc/service/atom/watch-daemon.yaml","fullPath":"/home/x/Projects/composer/src/doc/service/atom/watch-daemon.yaml","source":"services","lastModified":"2025-08-22T19:48:50.860Z"}},{"title":"Systemd Service","content":"Run Composer watch as a systemd service with automatic restart and process management. Use `systemctl` commands to manage the service lifecycle.","category":"service","weight":1,"details":{"installation":"sudo cp systemd/composer-watch.service /etc/systemd/system/composer-watch@.service","enable":"sudo systemctl enable composer-watch@$USER","start":"sudo systemctl start composer-watch@$USER","status":"systemctl status composer-watch@$USER","logs":"journalctl -u composer-watch@$USER -f"},"_meta":{"file":"src/doc/service/atom/systemd-deployment.yaml","fullPath":"/home/x/Projects/composer/src/doc/service/atom/systemd-deployment.yaml","source":"services","lastModified":"2025-08-22T19:48:31.433Z"}},{"title":"PM2 Process Manager","content":"Deploy with PM2 for advanced process management, monitoring, and clustering capabilities. Includes built-in log rotation and restart strategies.","category":"service","weight":2,"details":{"start":"pm2 start pm2.config.js","monitoring":"pm2 monit","logs":"pm2 logs composer-watch","restart":"pm2 restart composer-watch","stop":"pm2 stop composer-watch","startup":"pm2 startup && pm2 save"},"_meta":{"file":"src/doc/service/atom/pm2-deployment.yaml","fullPath":"/home/x/Projects/composer/src/doc/service/atom/pm2-deployment.yaml","source":"services","lastModified":"2025-08-22T19:48:37.533Z"}},{"title":"Health Monitoring","content":"Built-in health check endpoint and monitoring capabilities for service reliability. Provides status information and process metrics via HTTP API.","category":"service","weight":5,"details":{"endpoint":"http://localhost:3001/health","response":"JSON with status, PID, uptime, and watching state","heartbeat":"PID file timestamp updated every 30 seconds","monitoring":"Compatible with monitoring tools like Nagios, Zabbix, and Prometheus"},"_meta":{"file":"src/doc/service/atom/health-monitoring.yaml","fullPath":"/home/x/Projects/composer/src/doc/service/atom/health-monitoring.yaml","source":"services","lastModified":"2025-08-22T19:48:56.883Z"}},{"title":"Docker Container","content":"Containerized deployment with Docker for consistent environments and easy scaling. Includes health checks and volume mounting for persistent data.","category":"service","weight":3,"details":{"build":"docker build -f docker/Dockerfile.service -t composer-service .","run":"docker run -d --name composer-watch -v $(pwd):/workspace composer-service","logs":"docker logs -f composer-watch","stop":"docker stop composer-watch","health":"docker exec composer-watch curl -f http://localhost:3001/health"},"_meta":{"file":"src/doc/service/atom/docker-deployment.yaml","fullPath":"/home/x/Projects/composer/src/doc/service/atom/docker-deployment.yaml","source":"services","lastModified":"2025-08-22T19:48:44.163Z"}},{"title":"Service Configuration","content":"Flexible configuration options for service deployment including paths, debounce timing, and callback functions for custom integrations.","category":"service","weight":6,"details":{"config_file":"composer.config.js (default) or specify custom path","data_path":"Directory to watch for data files","templates_path":"Directory to watch for template files","output_path":"Directory for generated output","debounce_ms":"Milliseconds to wait before rebuilding (default: 1000)","on_rebuild":"Optional callback function triggered after rebuild"},"_meta":{"file":"src/doc/service/atom/configuration.yaml","fullPath":"/home/x/Projects/composer/src/doc/service/atom/configuration.yaml","source":"services","lastModified":"2025-08-22T19:49:03.866Z"}}],"features":[{"title":"Watch Mode","content":"Automatic rebuilding when source files change, perfect for development workflows.","category":"features","weight":3,"_meta":{"file":"src/doc/features/atom/watch-mode.yaml","fullPath":"/home/x/Projects/composer/src/doc/features/atom/watch-mode.yaml","source":"features","lastModified":"2025-08-22T18:48:42.996Z"}},{"title":"Template Engine","content":"Built-in template engine with variable substitution supporting nested paths and array access.","category":"features","weight":1,"_meta":{"file":"src/doc/features/atom/template-engine.yaml","fullPath":"/home/x/Projects/composer/src/doc/features/atom/template-engine.yaml","source":"features","lastModified":"2025-08-22T18:48:29.136Z"}},{"title":"Multi-Format Support","content":"Seamlessly works with YAML, JSON, Markdown, HTML, and plain text files.","category":"features","weight":2,"_meta":{"file":"src/doc/features/atom/multi-format.yaml","fullPath":"/home/x/Projects/composer/src/doc/features/atom/multi-format.yaml","source":"features","lastModified":"2025-08-22T18:48:36.216Z"}},{"title":"Flexible Build Pipeline","content":"Configurable build tasks with custom processors for complex content transformations.","category":"features","weight":4,"_meta":{"file":"src/doc/features/atom/build-pipeline.yaml","fullPath":"/home/x/Projects/composer/src/doc/features/atom/build-pipeline.yaml","source":"features","lastModified":"2025-08-22T18:48:50.839Z"}}],"templates":[{"content":"# {{project.name}}\n\n> {{project.description}}\n\n{{introduction.content}}\n\n## Features\n\n{{#each features}}\n- **{{title}}**: {{content}}\n{{/each}}\n\n## Installation\n\n```bash\nnpm install {{project.package}}\n```\n\n## Quick Start\n\n```javascript\nimport { Composer } from '{{project.package}}'\n\nconst composer = new Composer({\n  dataPath: './data',\n  templatesPath: './templates',\n  outputPath: './dist'\n})\n\n// Build your content\nawait composer.render()\n```\n\n## Documentation\n\nThis documentation is generated using Composer itself! Check out the `src/doc/` directory to see how it works.\n\n## Architecture\n\n{{architecture.description}}\n\n### Core Components\n\n{{#each architecture.components}}\n- **{{name}}**: {{description}}\n{{/each}}\n\n## Examples\n\n{{#each examples}}\n### {{title}}\n\n{{content}}\n\n```javascript\n{{code}}\n```\n\n{{/each}}\n\n## API Reference\n\n{{#each api.classes}}\n### {{name}}\n\n{{description}}\n\n#### Methods\n\n{{#each methods}}\n- `{{name}}({{params}})`: {{description}}\n{{/each}}\n\n{{/each}}\n\n## Service Deployment\n\n{{#each services}}\n### {{title}}\n\n{{content}}\n\n{{#if details}}\n**Commands:**\n{{#each details}}\n- **{{@key}}**: `{{this}}`\n{{/each}}\n{{/if}}\n\n{{/each}}\n\n## Contributing\n\nContributions are welcome! Please read our contributing guidelines.\n\n## License\n\n{{project.license}}\n\n---\n\n*Generated with ❤️ by {{project.name}} v{{project.version}}*","filePath":"/home/x/Projects/composer/src/doc/template/README.md","name":"README","_meta":{"file":"src/doc/template/README.md","fullPath":"/home/x/Projects/composer/src/doc/template/README.md","source":"templates","lastModified":"2025-08-22T19:50:04.352Z"}},{"content":"# {{project.name}}\n\n> {{project.description}}\n\n{{introduction.content}}\n\n## Features\n\n- **Template Engine**: Built-in template engine with variable substitution supporting nested paths and array access.\n- **Multi-Format Support**: Seamlessly works with YAML, JSON, Markdown, HTML, and plain text files.\n- **Watch Mode**: Automatic rebuilding when source files change, perfect for development workflows.\n- **Flexible Build Pipeline**: Configurable build tasks with custom processors for complex content transformations.\n\n## Installation\n\n```bash\nnpm install {{project.package}}\n```\n\n## Quick Start\n\n```javascript\nimport { Composer } from '{{project.package}}'\n\nconst composer = new Composer({\n  dataPath: './data',\n  templatesPath: './templates',\n  outputPath: './dist'\n})\n\n// Build your content\nawait composer.render()\n```\n\n## Documentation\n\nThis documentation is generated using Composer itself! Check out the `src/doc/` directory to see how it works.\n\n## Architecture\n\n{{architecture.description}}\n\n### Core Components\n\n- **Composer**: Main orchestrator class for the build process\n- **BuildPipeline**: Manages build tasks and transformations\n- **Template**: Template engine with variable substitution\n- **ConfigLoader**: Loads and validates configuration files\n\n## Example\n\nGenerate documentation from YAML and Markdown files:\n\n```javascript\nconst config = {\n  sources: {\n    content: {\n      pattern: 'content/**/*.md',\n      parser: 'markdown'\n    },\n    data: {\n      pattern: 'data/**/*.yaml',\n      parser: 'yaml'\n    }\n  },\n  outputs: [\n    {\n      target: 'dist/README.md',\n      format: 'markdown'\n    }\n  ]\n}\n```\n\n## API Reference\n\n### Composer Class\n\nMain class for orchestrating the build process.\n\n**Methods:**\n- `loadData()`: Loads data from configured data path\n- `render()`: Renders templates with loaded data\n- `watch(callback?)`: Watches for file changes and rebuilds\n- `stop()`: Stops watching for changes\n\n### BuildPipeline Class\n\nManages the build process with configurable tasks.\n\n**Methods:**\n- `execute()`: Executes all configured build tasks\n- `loadSources()`: Loads source files based on patterns\n- `processOutputs()`: Generates output files in configured formats\n\n## Contributing\n\nContributions are welcome! Please read our contributing guidelines.\n\n## License\n\n{{project.license}}\n\n---\n\n*Generated with ❤️ by {{project.name}} v{{project.version}}*","filePath":"/home/x/Projects/composer/src/doc/template/README-simple.md","name":"README-simple","_meta":{"file":"src/doc/template/README-simple.md","fullPath":"/home/x/Projects/composer/src/doc/template/README-simple.md","source":"templates","lastModified":"2025-08-22T18:54:56.312Z"}},{"content":"# {{project.name}}\n\n![Version](https://img.shields.io/badge/version-{{project.version}}-blue)\n![License](https://img.shields.io/badge/license-{{project.license}}-green)\n![Build](https://img.shields.io/badge/build-passing-brightgreen)\n\n> {{project.description}}\n\n## 🌟 Overview\n\n{{introduction.summary}}\n\n### ✨ Key Highlights\n\n{{#list introduction.highlights}}\n\n### 🤖 Self-Documenting\n\n{{introduction.selfDocumenting}}\n\n## 📋 Table of Contents\n\n{{#each toc}}\n- [{{title}}](#{{slug}})\n{{#each items}}  - [{{title}}](#{{slug}})\n{{/each}}\n{{/each}}\n\n## 🚀 Features\n\n{{#each features}}\n### {{icon}} {{name}}\n\n{{description}}\n\n{{#if benefits}}\n**Benefits:**\n{{#list benefits}}\n{{/if}}\n\n{{#if examples}}\n**Examples:**\n{{#each examples}}\n```{{language}}\n{{code}}\n```\n{{/each}}\n{{/if}}\n\n{{/each}}\n\n## 📦 Installation\n\n### NPM\n```bash\n{{installation.npm}}\n```\n\n### Yarn\n```bash\n{{installation.yarn}}\n```\n\n### Requirements\n{{#list installation.requirements}}\n\n## ⚡ Quick Start\n\n### Basic Usage\n\n```javascript\n{{quickStart.import}}\n\n{{quickStart.basic}}\n```\n\n### Advanced Configuration\n\n```javascript\nconst config = {\n  sources: {\n    content: {\n      pattern: 'content/**/*.md',\n      parser: 'markdown'\n    },\n    data: {\n      pattern: 'data/**/*.yaml', \n      parser: 'yaml'\n    }\n  },\n  \n  build: {\n    tasks: [\n      {\n        name: 'process-content',\n        input: 'content',\n        processor: 'markdown-processor'\n      }\n    ]\n  },\n  \n  outputs: [\n    {\n      target: 'dist/README.md',\n      format: 'markdown'\n    }\n  ]\n}\n\nconst composer = new Composer(config)\nawait composer.render()\n```\n\n## 🏗️ Architecture\n\n{{architecture.description}}\n\n### Core Components\n\n{{#each architecture.components}}\n- **{{name}}**: {{description}}\n{{/each}}\n\n### Class Structure\n\nThis project follows the **Class = Directory + Method-per-file** pattern:\n\n```\nClassName/\n  index.ts         # Class definition (container only)\n  constructor.ts   # Constructor implementation  \n  methodName.ts    # Individual method files\n  methodName.test.ts # Method tests\n```\n\n## 📖 Examples\n\n{{#each examples}}\n### {{title}}\n\n{{description}}\n\n```{{language}}\n{{code}}\n```\n\n{{/each}}\n\n## 🔧 API Reference\n\n{{#each api.classes}}\n### {{name}}\n\n{{description}}\n\n#### Methods\n\n{{#each methods}}\n##### `{{name}}({{params}})`\n\n{{description}}\n\n{{#if returns}}\n**Returns:** {{returns}}\n{{/if}}\n\n{{#each examples}}\n```javascript\n{{this}}\n```\n{{/each}}\n\n{{/each}}\n\n{{/each}}\n\n## 🧪 Testing\n\nThis project uses **Test-Driven Development (TDD)**:\n\n1. Write test first (Red phase)\n2. Write minimal code to pass (Green phase) \n3. Refactor while keeping tests green\n\n### Running Tests\n\n```bash\nnpm test                 # Run all tests\nnpm run test:watch       # Watch mode\nnpm run test:coverage    # Coverage report\n```\n\n## 🤝 Contributing\n\nWe welcome contributions! Please follow our development principles:\n\n1. **Class = Directory pattern** - Each class is a directory\n2. **One method per file** - Methods in separate files\n3. **Test-driven development** - Write tests first\n4. **Zero technical debt** - Complete tasks fully\n5. **Clean workspace** - Keep tmp/ for temporary files\n\n### Development Workflow\n\n1. Fork the repository\n2. Create feature branch: `git checkout -b feature/amazing-feature`\n3. Write tests first (TDD)\n4. Implement feature following our patterns\n5. Ensure all tests pass: `npm test`\n6. Commit changes: `git commit -m 'Add amazing feature'`\n7. Push to branch: `git push origin feature/amazing-feature`\n8. Open Pull Request\n\n## 📝 License\n\n{{project.license}}\n\n## 🙏 Acknowledgments\n\n- Built with TypeScript and modern Node.js\n- Follows AKAO.io development principles\n- Uses Test-Driven Development methodology\n\n---\n\n**This documentation is generated using {{project.name}} itself!** \n\nCheck out the `src/doc/` directory to see how we use atomic documentation pieces to build comprehensive docs.\n\n*Generated with ❤️ by {{project.name}} v{{project.version}}*","filePath":"/home/x/Projects/composer/src/doc/template/README-advanced.md","name":"README-advanced","_meta":{"file":"src/doc/template/README-advanced.md","fullPath":"/home/x/Projects/composer/src/doc/template/README-advanced.md","source":"templates","lastModified":"2025-08-22T19:31:20.234Z"}},{"content":"# CLAUDE.md\n\nThis file provides guidance to Claude AI when working with the {{project.name}} codebase.\n\n## Project Overview\n\n**{{project.name}}** - {{project.description}}\n\n**Version**: {{project.version}}\n**License**: {{project.license}}\n\n## Core Development Principles\n\n{{#each principles}}\n### {{number}}. {{title}}\n\n{{content}}\n\n{{#if importance}}\n**Importance**: {{importance}}\n{{/if}}\n\n{{#if examples}}\n#### Examples:\n{{#each examples}}\n```{{language}}\n{{code}}\n```\n{{/each}}\n{{/if}}\n\n{{#if antiPatterns}}\n#### Anti-Patterns to Avoid:\n{{#list antiPatterns}}\n{{/if}}\n\n{{/each}}\n\n## Architecture Patterns\n\n{{#each patterns}}\n### {{title}}\n\n{{description}}\n\n{{#if structure}}\n#### Structure:\n```\n{{structure}}\n```\n{{/if}}\n\n{{#if benefits}}\n#### Benefits:\n{{#list benefits}}\n{{/if}}\n\n{{#if usage}}\n#### Usage:\n{{usage}}\n{{/if}}\n\n{{/each}}\n\n## Project Architecture\n\n{{#each architecture}}\n### {{title}}\n\n{{description}}\n\n{{#if details}}\n{{#list details}}\n{{/if}}\n\n{{/each}}\n\n## Testing Requirements\n\n{{#each testing}}\n### {{title}}\n\n{{description}}\n\n{{#if importance}}\n**Importance**: {{importance}}\n{{/if}}\n\n{{#if example}}\n#### Example:\n```javascript\n{{example}}\n```\n{{/if}}\n\n{{/each}}\n\n## Development Workflow\n\n{{#each workflow}}\n### {{title}}\n\n{{#each steps}}\n{{@index}}. {{this}}\n{{/each}}\n\n{{#if checklist}}\n#### Checklist:\n{{#list checklist}}\n{{/if}}\n\n{{/each}}\n\n## Code Examples\n\n{{#each examples}}\n### {{title}}\n\n{{description}}\n\n```{{language}}\n{{code}}\n```\n\n{{/each}}\n\n## File Organization\n\n```\n{{fileStructure.src.structure}}\n```\n\n{{fileStructure.src.description}}\n\n## Anti-Patterns to Avoid\n\n{{#each antiPatterns}}\n### ❌ {{title}}\n\n**Wrong:**\n```javascript\n{{wrong}}\n```\n\n**Right:**\n```javascript\n{{right}}\n```\n\n**Reason:** {{reason}}\n\n{{/each}}\n\n## Common Commands\n\n```bash\nnpm run build    # Compile TypeScript\nnpm test         # Run all tests\nnpm run lint     # Check code style\nnpm run dev      # Development mode\n```\n\n## Notes for AI Agents\n\nWhen working on this codebase:\n\n1. **Always check existing patterns first**\n2. **Follow the established structure exactly**\n3. **Write tests before implementation (TDD)**\n4. **Keep methods small and focused**\n5. **Use proper naming conventions**\n6. **Maintain clean architecture**\n7. **Complete tasks fully (Zero Technical Debt)**\n8. **Keep workspace clean (tmp/ for temporary files)**\n\n## Key Implementation Rules\n\n- **Class = Directory + Method-per-file**: Every class is a directory with method files\n- **100% Real Implementation**: No mocks, stubs, or placeholders\n- **Test-Driven Development**: Write tests first, then implementation\n- **Zero Technical Debt**: Complete every task fully before moving on\n- **Clean Workspace**: All temporary files in tmp/, keep project root clean\n\n---\n\n*This documentation is generated using {{project.name}} itself!*\n\n*Check out the `src/doc/` directory to see how we use atomic documentation pieces to build comprehensive docs.*\n\n*Generated with ❤️ by {{project.name}} v{{project.version}}*","filePath":"/home/x/Projects/composer/src/doc/template/CLAUDE-advanced.md","name":"CLAUDE-advanced","_meta":{"file":"src/doc/template/CLAUDE-advanced.md","fullPath":"/home/x/Projects/composer/src/doc/template/CLAUDE-advanced.md","source":"templates","lastModified":"2025-08-22T19:34:12.495Z"}}]},"data":{},"variables":{},"files":{},"config":{"sources":{"project":{"pattern":"src/doc/config/project.yaml","parser":"yaml","namespace":"project"},"principles":{"pattern":"src/doc/claude/principles/atom/**/*.yaml","parser":"yaml","namespace":"principles"},"patterns":{"pattern":"src/doc/claude/patterns/atom/**/*.yaml","parser":"yaml","namespace":"patterns"},"testing":{"pattern":"src/doc/claude/testing/atom/**/*.yaml","parser":"yaml","namespace":"testing"},"workflow":{"pattern":"src/doc/claude/workflow/atom/**/*.yaml","parser":"yaml","namespace":"workflow"},"architecture":{"pattern":"src/doc/claude/architecture/atom/**/*.yaml","parser":"yaml","namespace":"architecture"},"services":{"pattern":"src/doc/service/atom/**/*.yaml","parser":"yaml","namespace":"services"},"features":{"pattern":"src/doc/features/atom/**/*.yaml","parser":"yaml","namespace":"features"},"templates":{"pattern":"src/doc/template/**/*.md","parser":"markdown","namespace":"templates"}},"build":{"tasks":[],"parallel":false,"bail":true},"outputs":[{"target":"README.md","format":"markdown","processor":"markdown-processor"},{"target":"CLAUDE.md","format":"markdown","processor":"markdown-processor"}],"plugins":[],"watch":{"patterns":["src/doc/**/*.yaml","src/doc/**/*.md"],"ignore":["tmp/**","dist/**"],"debounce":300,"reload":true},"options":{"baseDir":"/home/x/Projects/composer","cacheDir":"tmp/cache","verbose":true}}}
+# CLAUDE.md
+
+This file provides guidance to Claude AI when working with the @akaoio/composer codebase.
+
+## Project Overview
+
+**@akaoio/composer** - A powerful build system and content pipeline for generating documentation from multiple data sources
+
+**Version**: 0.2.1
+**License**: MIT
+**Author**: AKAO Team
+**Repository**: https://github.com/akaoio/composer
+
+## Core Development Principles
+
+
+### . Zero Technical Debt
+
+Complete every task fully before moving on - no TODO, FIXME, or placeholder code allowed.
+
+
+**Critical**: true
+
+
+
+### . 100% Real Implementation
+
+No mocks, stubs, or fake code - every implementation must be production-ready.
+
+
+**Critical**: true
+
+
+
+### . Clean Workspace
+
+All temporary files must be in tmp/, keep the workspace pristine and organized.
+
+
+**Critical**: true
+
+
+
+### . Class = Directory + Method-per-file
+
+Every class must be a directory with each method in a separate file, following the AKAO.io pattern for maximum reusability and maintainability.
+
+
+**Critical**: true
+
+
+
+
+## Architecture Patterns
+
+
+### Naming Convention
+
+Use singular forms and single words:
+- User not Users
+- get not getUser
+- save not saveData
+Long names split into directories:
+- user/profile/update.ts not updateUserProfile.ts
+
+
+
+
+
+### Class Structure Pattern
+
+Classes act as containers that import and delegate to method files:
+- index.ts contains only class definition and delegation
+- Each method lives in its own file with full logic
+- Constructor logic in constructor.ts
+
+
+
+Example:
+```
+Composer/
+  index.ts         # Class container
+  constructor.ts   # Constructor logic
+  loadData.ts      # loadData() method
+  render.ts        # render() method
+
+```
+
+
+
+
+## Project Architecture
+
+
+
+## Testing Requirements
+
+
+
+## Development Workflow
+
+
+
+## File Organization
+
+```
+src/
+  BuildPipeline/
+    index.ts         # Class definition
+    constructor.ts   # Constructor
+    execute.ts       # execute() method
+    loadSources.ts   # loadSources() method
+  Composer/
+    index.ts
+    constructor.ts
+    render.ts
+    watch.ts
+  Template/
+    index.ts
+    constructor.ts
+    render.ts
+    parseVariables.ts
+    resolveVariable.ts
+    renderWithLoops.ts  # Loop processing
+```
+
+## Common Commands
+
+```bash
+npm run build    # Compile TypeScript
+npm test         # Run all tests
+npm run lint     # Check code style
+npm run dev      # Development mode
+npm run docs:build  # Generate documentation
+```
+
+## Notes for AI Agents
+
+When working on this codebase:
+
+1. **Always check existing patterns first**
+2. **Follow the established structure exactly**
+3. **Write tests before implementation (TDD)**
+4. **Keep methods small and focused**
+5. **Use proper naming conventions**
+6. **Maintain clean architecture**
+7. **Complete tasks fully (Zero Technical Debt)**
+8. **Keep workspace clean (tmp/ for temporary files)**
+
+## Key Implementation Rules
+
+- **Class = Directory + Method-per-file**: Every class is a directory with method files
+- **100% Real Implementation**: No mocks, stubs, or placeholders
+- **Test-Driven Development**: Write tests first, then implementation
+- **Zero Technical Debt**: Complete every task fully before moving on
+- **Clean Workspace**: All temporary files in tmp/, keep project root clean
+
+---
+
+*This documentation is generated using @akaoio/composer itself!*
+
+*Check out the `src/doc/` directory to see how we use atomic documentation pieces to build comprehensive docs.*
+
+*Generated with ❤️ by @akaoio/composer v0.2.1*

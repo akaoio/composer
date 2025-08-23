@@ -1,0 +1,42 @@
+{
+  "department_id": "strategy",
+  "department_name": "Strategy & Planning",
+  "color": "blue",
+  "leadership": {
+    "head": "venture-strategist",
+    "deputy": "strategy-advisor",
+    "advisors": ["board-member-1", "board-member-2"]
+  },
+  "objectives": {
+    "primary": "Drive company vision and strategic direction",
+    "secondary": ["Market positioning", "Resource optimization", "Innovation pipeline"],
+    "kpis": {
+      "strategic_objectives_met": 0.90,
+      "market_share_growth": 0.15,
+      "innovation_pipeline_value": 50000000
+    }
+  },
+  "teams": [
+    "import:../teams/strategic-team.json"
+  ],
+  "initiatives": {
+    "current": [
+      {
+        "name": "Digital Transformation",
+        "phase": "execution",
+        "completion": 0.65
+      },
+      {
+        "name": "Global Expansion",
+        "phase": "planning",
+        "completion": 0.25
+      }
+    ],
+    "pipeline": ["AI Integration", "Sustainability Program", "M&A Strategy"]
+  },
+  "resources": {
+    "headcount": 12,
+    "contractors": 5,
+    "systems": ["strategy-os", "scenario-planner", "decision-engine"]
+  }
+}

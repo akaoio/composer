@@ -1,0 +1,4 @@
+title: "Multi-Platform Support"
+content: "Works seamlessly with Node.js, Bun, Deno. Deploy as module or standalone server."
+icon: "🚀"
+type: "feature"

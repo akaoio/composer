@@ -1,0 +1,21 @@
+title: "Development Setup"
+content: |
+  ### Clone and Setup
+  
+  ```bash
+  git clone https://github.com/akaoio/composer.git
+  cd composer
+  
+  # Install dependencies
+  npm install     # or `bun install` or `deno install`
+  
+  # Build TypeScript
+  npm run build
+  
+  # Run tests
+  npm test
+  
+  # Build documentation (using composer itself!)
+  npm run build:doc
+  ```
+type: "contributing"

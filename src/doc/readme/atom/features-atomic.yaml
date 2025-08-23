@@ -1,0 +1,4 @@
+title: "Atomic Documentation"
+content: "Break down documentation into small, reusable YAML pieces that can be combined into comprehensive documents."
+icon: "⚛️"
+type: "feature"

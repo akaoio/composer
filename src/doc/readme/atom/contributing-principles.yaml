@@ -1,0 +1,11 @@
+title: "Development Principles"
+content: |
+  When contributing, follow these core principles:
+  
+  1. **Class = Directory + Method-per-file** - Every class is a directory
+  2. **Atomic Documentation** - Each piece of content is a separate YAML file
+  3. **Test-Driven Development** - Write tests first, implementation second
+  4. **100% Real Implementation** - No mocks, stubs, or placeholder code
+  5. **Zero Technical Debt** - Complete every task fully before moving on
+  6. **Self-Documenting** - This README is generated using Composer itself!
+type: "contributing"

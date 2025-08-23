@@ -1,0 +1,44 @@
+# Data source cho examples documentation
+examples:
+  - id: simple-company
+    name: Simple Company Example
+    description: Generate personalized job descriptions for 25 employees
+    features:
+      - forEach iteration over arrays
+      - "{{#each}} loops for nested data"
+      - "{{#if}} conditional rendering"
+      - Simple variable substitution
+    data_sources: 1 JSON file
+    output_count: 25 files
+    complexity: Basic
+    
+  - id: complex-ai-company  
+    name: Complex AI Company Example
+    description: Enterprise-grade AI agent profiles with deep nested imports
+    features:
+      - Deep nested imports (4+ levels)
+      - YAML to JSON import chains
+      - Complex templates (200+ lines)
+      - Multiple data sources
+      - Hierarchical folder output
+      - Transform functions
+      - "{{#if}}...{{else}}...{{/if}} conditionals"
+      - "Nested {{#each}} loops"
+      - "Loop variables: {{@first}}, {{@last}}, {{@index}}"
+    configs:
+      - name: config.js
+        description: Simple config with single JSON source
+        output_count: 12 agent files
+      - name: complex-config.js
+        description: Nested imports with data enrichment
+        output_count: 4 agent files with full context
+    data_sources: Multiple YAML/JSON with imports
+    complexity: Advanced
+
+metadata:
+  project: "@akaoio/composer"
+  version: "0.2.1"
+  principles:
+    - Zero hardcoding
+    - Auto-generated documentation
+    - Data-driven templates
