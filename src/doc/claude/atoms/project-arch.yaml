@@ -1,0 +1,36 @@
+project_architecture:
+  overview: "Composer follows a modular, class-as-directory architecture"
+  
+  core_components:
+    - name: "BuildPipeline"
+      description: "Main orchestrator for the build process"
+      responsibility: "Loads sources, processes tasks, generates outputs"
+    
+    - name: "Template"
+      description: "Handlebars-based template engine"
+      responsibility: "Variable resolution, loops, conditionals"
+    
+    - name: "ConfigLoader"
+      description: "Configuration management"
+      responsibility: "Loads and validates composer.config.js files"
+    
+    - name: "ImportResolver"
+      description: "Import chain resolution"
+      responsibility: "Handles YAML/JSON imports and circular dependencies"
+    
+    - name: "Composer"
+      description: "Main API class"
+      responsibility: "Public interface for programmatic usage"
+  
+  data_flow: |
+    1. ConfigLoader reads composer.config.js
+    2. BuildPipeline loads sources (YAML/JSON/Markdown)
+    3. ImportResolver handles any imports in files
+    4. Template processes variables and loops
+    5. BuildPipeline generates outputs in specified formats
+    6. Files written to disk
+
+  dependencies:
+    build: "@akaoio/builder"
+    test: "@akaoio/battle"
+    self: "@akaoio/composer (self-hosted docs!)"

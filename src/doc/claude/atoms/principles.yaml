@@ -1,0 +1,5 @@
+principles:
+  - $import: ../principles/atom/zero-debt.yaml
+  - $import: ../principles/atom/real-implementation.yaml
+  - $import: ../principles/atom/clean-workspace.yaml
+  - $import: ../principles/atom/class-directory.yaml

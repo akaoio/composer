@@ -9,9 +9,8 @@ export function watch(this: any, callback?: (outputs: Map<string, string>) => vo
   const paths = [
     this.options.dataPath,
     this.options.templatesPath,
-    this.options.particlesPath,
-    this.options.componentsPath,
-    this.options.documentsPath
+    this.options.sourcesPath,
+    this.options.configPath
   ].filter(p => p)
   
   let debounceTimer: NodeJS.Timeout | null = null

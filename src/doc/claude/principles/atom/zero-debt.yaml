@@ -1,5 +1,3 @@
-title: "Zero Technical Debt"
-content: "Complete every task fully before moving on - no TODO, FIXME, or placeholder code allowed."
-principle_number: 2
+name: "Zero Technical Debt"
+description: "Complete every task fully before moving on - no TODO, FIXME, or placeholder code allowed."
 critical: true
-weight: 2

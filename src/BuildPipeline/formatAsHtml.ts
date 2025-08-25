@@ -5,8 +5,8 @@ export async function formatAsHtml(this: any, content: string, options: any = {}
   
   let html = content
   
-  // If content looks like markdown, convert it
-  if (options.convertMarkdown && content.includes('#')) {
+  // Convert markdown to HTML by default (unless explicitly disabled)
+  if (options.convertMarkdown !== false) {
     html = await this.convertMarkdownToHtml(content)
   }
   

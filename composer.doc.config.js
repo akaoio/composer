@@ -43,6 +43,13 @@ module.exports = {
       namespace: 'service.atoms'
     },
     
+    // Claude documentation atoms
+    claudeAtoms: {
+      pattern: 'src/doc/claude/atoms/**/*.yaml',
+      parser: 'yaml',
+      namespace: 'claude'
+    },
+    
     // Components (composed from atoms)
     components: {
       pattern: 'src/doc/component/**/*.yaml',
@@ -137,6 +144,25 @@ module.exports = {
       target: 'docs/architecture.md',
       template: 'src/doc/template/architecture.md',
       format: 'markdown'
+    },
+    {
+      target: 'CLAUDE.md',
+      template: 'src/doc/claude/templates/claude.md',
+      format: 'markdown',
+      processor: 'template',
+      data: {
+        project: '{{claude.project}}',
+        principles: '{{claude.principles}}',
+        naming_convention: '{{claude.naming_convention}}',
+        class_structure: '{{claude.class_structure}}',
+        file_organization: '{{claude.file_organization}}',
+        project_architecture: '{{claude.project_architecture}}',
+        testing: '{{claude.testing}}',
+        development_workflow: '{{claude.development_workflow}}',
+        commands: '{{claude.commands}}',
+        workflow: '{{claude.workflow}}',
+        implementation_rules: '{{claude.implementation_rules}}'
+      }
     }
   ],
   

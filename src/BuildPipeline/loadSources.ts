@@ -110,7 +110,22 @@ export async function loadSources(this: any): Promise<void> {
       }
     }
     
-    // Store as single object if only one file, otherwise as array
-    this.context.sources[name] = sourceData.length === 1 ? sourceData[0] : sourceData
+    // Store data based on configuration or number of files
+    if (config.asObject && sourceData.length > 1) {
+      // Create object with file names as keys
+      const sourceObject: any = {}
+      for (const data of sourceData) {
+        // Use file name without extension as key
+        const fileName = path.basename(data._meta.file, path.extname(data._meta.file))
+        sourceObject[fileName] = data
+      }
+      this.context.sources[name] = sourceObject
+    } else if (sourceData.length === 1) {
+      // Single file: store as object
+      this.context.sources[name] = sourceData[0]
+    } else {
+      // Multiple files: store as array by default (backward compatibility)
+      this.context.sources[name] = sourceData
+    }
   }
 }

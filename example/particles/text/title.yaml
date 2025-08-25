@@ -1,8 +1,0 @@
-name: title
-type: text
-category: text
-description: Main title for documents
-content: "# Atomic Composer Demo"
-tags:
-  - title
-  - header

@@ -1,13 +1,11 @@
-title: "Class Structure Pattern"
-content: |
-  Classes act as containers that import and delegate to method files:
-  - index.ts contains only class definition and delegation
-  - Each method lives in its own file with full logic
-  - Constructor logic in constructor.ts
+pattern: "Classes act as containers that import and delegate to method files"
+rules:
+  - "index.ts contains only class definition and delegation"
+  - "Each method lives in its own file with full logic"
+  - "Constructor logic in constructor.ts"
 example: |
   Composer/
     index.ts         # Class container
     constructor.ts   # Constructor logic
     loadData.ts      # loadData() method
     render.ts        # render() method
-weight: 1

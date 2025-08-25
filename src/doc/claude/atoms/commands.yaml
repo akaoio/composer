@@ -1,0 +1,33 @@
+commands:
+  - name: "npm run build"
+    description: "Compile TypeScript with @akaoio/builder"
+  - name: "npm test"
+    description: "Run all tests with @akaoio/battle"
+  - name: "npm run lint"
+    description: "Check code style"
+  - name: "npm run dev"
+    description: "Development mode with watch"
+  - name: "npm run docs:build"
+    description: "Generate documentation with @akaoio/composer (self-hosted!)"
+
+workflow:
+  - "Always check existing patterns first"
+  - "Follow the established structure exactly"
+  - "Write tests before implementation (TDD)"
+  - "Keep methods small and focused"
+  - "Use proper naming conventions"
+  - "Maintain clean architecture"
+  - "Complete tasks fully (Zero Technical Debt)"
+  - "Keep workspace clean (tmp/ for temporary files)"
+
+implementation_rules:
+  - rule: "Class = Directory + Method-per-file"
+    description: "Every class is a directory with method files"
+  - rule: "100% Real Implementation"
+    description: "No mocks, stubs, or placeholders"
+  - rule: "Test-Driven Development"
+    description: "Write tests first, then implementation"
+  - rule: "Zero Technical Debt"
+    description: "Complete every task fully before moving on"
+  - rule: "Clean Workspace"
+    description: "All temporary files in tmp/, keep project root clean"

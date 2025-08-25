@@ -1,0 +1,27 @@
+development_workflow:
+  steps:
+    - step: "1. Create atomic documentation"
+      details: "Break content into small YAML/JSON atoms"
+    
+    - step: "2. Design templates"
+      details: "Create Handlebars templates that compose atoms"
+    
+    - step: "3. Configure outputs"
+      details: "Define target files and formats in composer.config.js"
+    
+    - step: "4. Test with @akaoio/battle"
+      details: "Write PTY tests for all functionality"
+    
+    - step: "5. Build with @akaoio/builder"
+      details: "Compile TypeScript to multiple formats"
+    
+    - step: "6. Generate docs"
+      details: "Run composer to generate all documentation"
+
+  best_practices:
+    - "Keep atoms small and focused (single responsibility)"
+    - "Use namespaces to organize related atoms"
+    - "Template variables use {{path.to.value}} syntax"
+    - "Loops: {{#each items}}...{{/each}}"
+    - "Conditionals: {{#if condition}}...{{/if}}"
+    - "All paths in config should be relative to project root"

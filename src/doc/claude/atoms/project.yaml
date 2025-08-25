@@ -1,0 +1,6 @@
+name: "@akaoio/composer"
+description: "A powerful build system and content pipeline for generating documentation from multiple data sources"
+version: "0.2.3"
+license: "MIT"
+author: "AKAO Team"
+repository: "https://github.com/akaoio/composer"

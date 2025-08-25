@@ -5,24 +5,24 @@
 ## ✨ Features
 
 
-### 📝 Advanced Templating
+###  Watch Mode
 
-Supports nested loops, conditionals, variable substitution, and complex data transformations.
-
-
-### ⚡ Real-time Building
-
-Watch mode with hot reload, file change detection, and incremental builds.
+Automatic rebuilding when source files change, perfect for development workflows.
 
 
-### 🚀 Multi-Platform Support
+###  Template Engine
 
-Works seamlessly with Node.js, Bun, Deno. Deploy as module or standalone server.
+Built-in template engine with variable substitution supporting nested paths and array access.
 
 
-### ⚛️ Atomic Documentation
+###  Multi-Format Support
 
-Break down documentation into small, reusable YAML pieces that can be combined into comprehensive documents.
+Seamlessly works with YAML, JSON, Markdown, HTML, and plain text files.
+
+
+###  Flexible Build Pipeline
+
+Configurable build tasks with custom processors for complex content transformations.
 
 
 
@@ -252,6 +252,6 @@ MIT
 
 ---
 
-*Generated with ❤️ by @akaoio/composer v0.2.1*
+*Generated with ❤️ by @akaoio/composer v0.2.3*
 
 *This README demonstrates atomic documentation - every section is composed from individual YAML files in `src/doc/readme/atom/`*

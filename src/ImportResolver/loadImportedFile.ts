@@ -131,12 +131,12 @@ async function resolveImportsInData(this: any, data: any, baseDir: string): Prom
     
     // First, handle imports to get base data
     for (const [key, value] of Object.entries(data)) {
-      if (key === 'import' && typeof value === 'string') {
+      if ((key === 'import' || key === '$import') && typeof value === 'string') {
         // Load imported data and merge it with resolved object
         const importPath = path.resolve(baseDir, value)
         const importedData = await this.loadImportedFile(importPath)
         Object.assign(resolved, importedData)
-      } else if (key === 'imports' && Array.isArray(value)) {
+      } else if ((key === 'imports' || key === '$imports') && Array.isArray(value)) {
         // Handle multiple imports (merge them)
         for (const imp of value) {
           if (typeof imp === 'string') {
@@ -161,9 +161,15 @@ async function resolveImportsInData(this: any, data: any, baseDir: string): Prom
     
     // Then process other properties (these override imported data)
     for (const [key, value] of Object.entries(data)) {
-      if (key !== 'import' && key !== 'imports') {
-        // Recursively process nested data
-        resolved[key] = await resolveImportsInData.call(this, value, baseDir)
+      if (key !== 'import' && key !== '$import' && key !== 'imports' && key !== '$imports') {
+        // Handle nested $import
+        if (typeof value === 'object' && value !== null && (value.$import || value.import)) {
+          const importPath = path.resolve(baseDir, value.$import || value.import)
+          resolved[key] = await this.loadImportedFile(importPath)
+        } else {
+          // Recursively process nested data
+          resolved[key] = await resolveImportsInData.call(this, value, baseDir)
+        }
       }
     }
     

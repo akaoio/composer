@@ -1,5 +1,3 @@
-title: "Clean Workspace"
-content: "All temporary files must be in tmp/, keep the workspace pristine and organized."
-principle_number: 3
+name: "Clean Workspace"
+description: "All temporary files must be in tmp/, keep the workspace pristine and organized."
 critical: true
-weight: 3

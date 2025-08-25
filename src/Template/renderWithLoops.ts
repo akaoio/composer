@@ -2,7 +2,13 @@ import { resolveFromContext } from './resolveFromContext.js'
 
 export function renderWithLoops(this: any, template: string, context?: any): string {
   // Use provided context or fall back to this.context
-  const ctx = context || this.context
+  let ctx = context || this.context
+  
+  // If context has a 'data' property, use that as the actual context
+  // This handles the common pattern of { data: { ... } }
+  if (ctx && ctx.data && typeof ctx.data === 'object') {
+    ctx = { ...ctx.data, ...ctx }
+  }
   
   // Function to find matching end tag for nested blocks
   const findMatchingEnd = (str: string, startPos: number): number => {

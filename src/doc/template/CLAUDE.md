@@ -13,10 +13,10 @@ This file provides guidance to Claude AI when working with the {{project.name}} 
 
 ## Core Development Principles
 
-{{#each principles}}
-### {{number}}. {{title}}
+{{#each claudePrinciples.principles}}
+### {{name}}
 
-{{content}}
+{{description}}
 
 {{#if critical}}
 **Critical**: {{critical}}
@@ -26,106 +26,101 @@ This file provides guidance to Claude AI when working with the {{project.name}} 
 
 ## Architecture Patterns
 
-{{#each patterns}}
-### {{title}}
+### Naming Convention
 
-{{content}}
+{{#each claudeArchitecture.naming_convention.rules}}
+- {{this}}
+{{/each}}
 
-{{#if example}}
+### Class Structure Pattern
+
+{{claudeArchitecture.class_structure.pattern}}:
+{{#each claudeArchitecture.class_structure.rules}}
+- {{this}}
+{{/each}}
+
 Example:
 ```
-{{example}}
+{{claudeArchitecture.class_structure.example}}
 ```
-{{/if}}
-
-{{/each}}
 
 ## Project Architecture
 
-{{architecture.content}}
+{{claudeProjectArch.project_architecture.overview}}
 
-## Testing Requirements
+### Core Components
 
-{{#each testing}}
-### {{title}}
-
-{{content}}
-
-{{#if importance}}
-**Importance**: {{importance}}
-{{/if}}
-
-{{#if example}}
-Example:
-```
-{{example}}
-```
-{{/if}}
+{{#each claudeProjectArch.project_architecture.core_components}}
+**{{name}}**: {{description}}
+- Responsibility: {{responsibility}}
 
 {{/each}}
 
+### Data Flow
+```
+{{claudeProjectArch.project_architecture.data_flow}}
+```
+
+### Dependencies
+- **Build**: {{claudeProjectArch.project_architecture.dependencies.build}}
+- **Test**: {{claudeProjectArch.project_architecture.dependencies.test}}
+- **Docs**: {{claudeProjectArch.project_architecture.dependencies.self}}
+
+## Testing Requirements
+
+**Framework**: {{claudeTesting.testing.framework}}
+**Approach**: {{claudeTesting.testing.approach}}
+
+### Requirements
+{{#each claudeTesting.testing.requirements}}
+- {{this}}
+{{/each}}
+
+### Example Test
+```typescript
+{{claudeTesting.testing.example}}
+```
+
 ## Development Workflow
 
-{{#each workflow}}
-### {{title}}
+{{#each claudeWorkflow.development_workflow.steps}}
+{{step}}
+  {{details}}
 
-{{content}}
+{{/each}}
 
+### Best Practices
+{{#each claudeWorkflow.development_workflow.best_practices}}
+- {{this}}
 {{/each}}
 
 ## File Organization
 
 ```
-src/
-  BuildPipeline/
-    index.ts         # Class definition
-    constructor.ts   # Constructor
-    execute.ts       # execute() method
-    loadSources.ts   # loadSources() method
-  Composer/
-    index.ts
-    constructor.ts
-    render.ts
-    watch.ts
-  Template/
-    index.ts
-    constructor.ts
-    render.ts
-    parseVariables.ts
-    resolveVariable.ts
-    renderWithLoops.ts  # Loop processing
+{{claudeArchitecture.file_organization}}
 ```
 
 ## Common Commands
 
 ```bash
-npm run build    # Compile TypeScript
-npm test         # Run all tests
-npm run lint     # Check code style
-npm run dev      # Development mode
-npm run docs:build  # Generate documentation
+{{#each claudeCommands.commands}}
+{{name}}    # {{description}}
+{{/each}}
 ```
 
 ## Notes for AI Agents
 
 When working on this codebase:
 
-1. **Always check existing patterns first**
-2. **Follow the established structure exactly**
-3. **Write tests before implementation (TDD)**
-4. **Keep methods small and focused**
-5. **Use proper naming conventions**
-6. **Maintain clean architecture**
-7. **Complete tasks fully (Zero Technical Debt)**
-8. **Keep workspace clean (tmp/ for temporary files)**
+{{#each claudeCommands.workflow}}
+- **{{this}}**
+{{/each}}
 
 ## Key Implementation Rules
 
-- **Class = Directory + Method-per-file**: Every class is a directory with method files
-- **100% Real Implementation**: No mocks, stubs, or placeholders
-- **Test-Driven Development**: Write tests first, then implementation
-- **Zero Technical Debt**: Complete every task fully before moving on
-- **Clean Workspace**: All temporary files in tmp/, keep project root clean
+{{#each claudeCommands.implementation_rules}}
+- **{{rule}}**: {{description}}
+{{/each}}
 
 ---
 

@@ -21,5 +21,5 @@
         .ansi-white { color: #fff; }
     </style>
 </head>
-<body><br></body>
+<body>🏗️ Building documentation...<br></span><span class="ansi-red">❌ Build failed: Attempted to assign to readonly property.</span><br></span><span class="ansi-red">TypeError: Attempted to assign to readonly property.<br>    at buildDocs (/home/x/Projects/composer/bin/composer.mjs:177:26)<br>    at buildDocs (/home/x/Projects/composer/bin/composer.mjs:142:26)<br>    at main (/home/x/Projects/composer/bin/composer.mjs:324:13)<br>    at main (/home/x/Projects/composer/bin/composer.mjs:310:20)<br>    at /home/x/Projects/composer/bin/composer.mjs:353<br>    at moduleEvaluation (native:1:11)<br>    at moduleEvaluation (native:1:11)<br>    at loadAndEvaluateModule (native:2)</span><br></body>
 </html>

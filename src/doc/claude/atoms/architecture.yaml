@@ -1,0 +1,25 @@
+naming_convention:
+  $import: ../patterns/atom/naming-convention.yaml
+
+class_structure:
+  $import: ../patterns/atom/class-structure.yaml
+
+file_organization: |
+  src/
+    BuildPipeline/
+      index.ts         # Class definition
+      constructor.ts   # Constructor
+      execute.ts       # execute() method
+      loadSources.ts   # loadSources() method
+    Composer/
+      index.ts
+      constructor.ts
+      render.ts
+      watch.ts
+    Template/
+      index.ts
+      constructor.ts
+      render.ts
+      parseVariables.ts
+      resolveVariable.ts
+      renderWithLoops.ts  # Loop processing

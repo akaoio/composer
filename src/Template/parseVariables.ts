@@ -15,8 +15,8 @@ export function parseVariables(this: any, template: string): TemplateVariable[] 
       continue
     }
     
-    // Skip variables with special characters (only allow alphanumeric, dots, brackets, underscores, and minus for negative indices)
-    if (!/^[a-zA-Z0-9_.\[\]\-]+$/.test(pathString)) {
+    // Skip variables with special characters (only allow alphanumeric, dots, brackets, underscores, @, and minus for negative indices)
+    if (!/^[a-zA-Z0-9_.\[\]\-@]+$/.test(pathString)) {
       continue
     }
     

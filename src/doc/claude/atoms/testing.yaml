@@ -1,0 +1,32 @@
+testing:
+  # This will load test-structure.yaml which itself imports framework-details and approach-details
+  test_structure:
+    $import: ../testing/atom/test-structure.yaml
+  
+  # Direct import of TDD requirement
+  tdd_requirement:
+    $import: ../testing/atom/tdd-requirement.yaml
+    
+  # Inline framework and approach from the nested imports
+  framework: "@akaoio/battle"
+  approach: "Test-Driven Development (TDD)"
+  
+  requirements:
+    - "All code must be tested with @akaoio/battle"
+    - "No Jest, Vitest, or external test frameworks"
+    - "Real PTY testing for CLI applications"
+    - "Write tests BEFORE implementation"
+    - "Tests must use actual file I/O, no mocks"
+  
+  example: |
+    import { Battle } from "@akaoio/battle"
+    
+    const battle = new Battle({
+      command: 'composer',
+      args: ['build'],
+      timeout: 30000
+    })
+    
+    await battle.spawn()
+    await battle.expect('Build complete')
+    battle.cleanup()

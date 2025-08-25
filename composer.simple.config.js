@@ -11,21 +11,40 @@ module.exports = {
       parser: 'json'
     },
     
-    // Load YAML configuration from docs
+    // Load project metadata
     project: {
       pattern: 'src/doc/config/project.yaml',
       parser: 'yaml'
     },
     
-    // Load principles
-    principles: {
-      pattern: 'src/doc/claude/principles/atom/**/*.yaml',
+    // Load CLAUDE.md atoms individually for proper access
+    claudePrinciples: {
+      pattern: 'src/doc/claude/atoms/principles.yaml',
       parser: 'yaml'
     },
     
-    // Load patterns
-    patterns: {
-      pattern: 'src/doc/claude/patterns/atom/**/*.yaml',
+    claudeArchitecture: {
+      pattern: 'src/doc/claude/atoms/architecture.yaml',
+      parser: 'yaml'
+    },
+    
+    claudeProjectArch: {
+      pattern: 'src/doc/claude/atoms/project-arch.yaml',
+      parser: 'yaml'
+    },
+    
+    claudeTesting: {
+      pattern: 'src/doc/claude/atoms/testing.yaml',
+      parser: 'yaml'
+    },
+    
+    claudeWorkflow: {
+      pattern: 'src/doc/claude/atoms/workflow.yaml',
+      parser: 'yaml'
+    },
+    
+    claudeCommands: {
+      pattern: 'src/doc/claude/atoms/commands.yaml',
       parser: 'yaml'
     },
 
