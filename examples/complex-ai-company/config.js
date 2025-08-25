@@ -1,8 +1,8 @@
 module.exports = {
   sources: {
     agentData: {
-      pattern: 'data/agents.json',
-      parser: 'json',
+      pattern: 'data/agents.yaml',
+      parser: 'yaml',
       transform: (data) => {
         // Flatten company and department info into each agent
         const agents = data.agents.map(agent => {

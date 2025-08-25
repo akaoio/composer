@@ -1,0 +1,259 @@
+sprint:
+  id: sprint-2025-w5
+  name: Sprint 5 - Platform Core
+  start_date: 2025-01-27
+  end_date: 2025-02-07
+  capacity: 200_points
+  committed: 180_points
+  completed: 45_points
+  
+tasks:
+  - id: task-001
+    title: Implement Agent Communication Protocol
+    project_id: prj-001
+    type: feature
+    status: in_progress
+    priority: critical
+    story_points: 13
+    assignees:
+      - alice-chen
+      - bob-smith
+    reviewers:
+      - frank-zhang
+    created_at: 2025-01-27T09:00:00Z
+    updated_at: 2025-01-29T14:30:00Z
+    due_date: 2025-02-03
+    progress: 40%
+    blockers: []
+    dependencies:
+      - task-002
+    time_tracking:
+      estimated: 40h
+      logged: 16h
+      remaining: 24h
+    comments:
+      - author: alice-chen
+        timestamp: 2025-01-28T10:00:00Z
+        text: Started implementation of base protocol
+      - author: bob-smith
+        timestamp: 2025-01-29T14:30:00Z
+        text: Message queue integration complete
+    labels:
+      - backend
+      - architecture
+      - agent-system
+      
+  - id: task-002
+    title: Design Agent Message Queue Architecture
+    project_id: prj-001
+    type: design
+    status: completed
+    priority: critical
+    story_points: 8
+    assignees:
+      - frank-zhang
+    reviewers:
+      - grace-wilson
+    created_at: 2025-01-20T09:00:00Z
+    completed_at: 2025-01-26T17:00:00Z
+    time_tracking:
+      estimated: 24h
+      logged: 22h
+    deliverables:
+      - architecture_diagram: true
+      - technical_spec: true
+      - review_approved: true
+      
+  - id: task-003
+    title: Create Dashboard Analytics Module
+    project_id: prj-001
+    type: feature
+    status: in_progress
+    priority: high
+    story_points: 21
+    assignees:
+      - carol-kim
+      - david-lee
+    reviewers:
+      - alice-chen
+    created_at: 2025-01-27T09:00:00Z
+    updated_at: 2025-01-29T16:00:00Z
+    due_date: 2025-02-05
+    progress: 25%
+    blockers:
+      - waiting_for: API specifications
+        blocked_since: 2025-01-29T16:00:00Z
+    time_tracking:
+      estimated: 60h
+      logged: 15h
+      remaining: 45h
+    subtasks:
+      - id: task-003-1
+        title: Design dashboard layout
+        status: completed
+        assignee: carol-kim
+      - id: task-003-2
+        title: Implement data aggregation
+        status: in_progress
+        assignee: david-lee
+      - id: task-003-3
+        title: Create visualization components
+        status: not_started
+        assignee: carol-kim
+        
+  - id: task-004
+    title: Optimize Database Query Performance
+    project_id: prj-001
+    type: optimization
+    status: not_started
+    priority: medium
+    story_points: 13
+    assignees:
+      - henry-park
+    reviewers:
+      - frank-zhang
+    created_at: 2025-01-27T09:00:00Z
+    due_date: 2025-02-07
+    dependencies:
+      - task-005
+    acceptance_criteria:
+      - query_time: "< 100ms"
+      - index_coverage: "> 90%"
+      - load_test_passed: true
+    time_tracking:
+      estimated: 40h
+      logged: 0h
+      remaining: 40h
+      
+  - id: task-005
+    title: Conduct Database Performance Audit
+    project_id: prj-001
+    type: analysis
+    status: in_review
+    priority: medium
+    story_points: 5
+    assignees:
+      - henry-park
+    reviewers:
+      - frank-zhang
+      - grace-wilson
+    created_at: 2025-01-25T09:00:00Z
+    updated_at: 2025-01-29T17:30:00Z
+    due_date: 2025-01-30
+    progress: 90%
+    deliverables:
+      - performance_report: completed
+      - bottleneck_analysis: completed
+      - optimization_recommendations: in_review
+    time_tracking:
+      estimated: 16h
+      logged: 14h
+      remaining: 2h
+      
+  - id: task-006
+    title: Implement Authentication Service
+    project_id: prj-001
+    type: feature
+    status: in_progress
+    priority: critical
+    story_points: 34
+    assignees:
+      - jack-brown
+      - ivy-patel
+    reviewers:
+      - security-team
+    created_at: 2025-01-20T09:00:00Z
+    updated_at: 2025-01-29T18:00:00Z
+    due_date: 2025-02-07
+    progress: 60%
+    security_review:
+      status: pending
+      scheduled: 2025-02-04
+    compliance:
+      - OWASP: in_progress
+      - SOC2: planned
+      - GDPR: planned
+    time_tracking:
+      estimated: 80h
+      logged: 48h
+      remaining: 32h
+      
+  - id: task-007
+    title: Setup CI/CD Pipeline
+    project_id: prj-004
+    type: infrastructure
+    status: in_progress
+    priority: high
+    story_points: 21
+    assignees:
+      - wendy-liu
+      - victor-hughes
+    reviewers:
+      - uma-sharma
+    created_at: 2025-01-27T09:00:00Z
+    updated_at: 2025-01-29T15:00:00Z
+    due_date: 2025-02-05
+    progress: 35%
+    stages:
+      - build_pipeline: completed
+      - test_automation: in_progress
+      - deployment_automation: not_started
+      - monitoring_integration: not_started
+    time_tracking:
+      estimated: 60h
+      logged: 21h
+      remaining: 39h
+      
+  - id: task-008
+    title: Customer Demo Preparation
+    project_id: prj-002
+    type: presentation
+    status: not_started
+    priority: high
+    story_points: 8
+    assignees:
+      - paul-anderson
+      - quinn-taylor
+    reviewers:
+      - executive-team
+    created_at: 2025-01-28T09:00:00Z
+    due_date: 2025-02-04
+    demo_details:
+      customer: TechCorp Enterprise
+      date: 2025-02-04T14:00:00Z
+      duration: 2h
+      attendees: 12
+    preparation:
+      - demo_script: not_started
+      - test_environment: not_started
+      - slides: not_started
+      - backup_plan: not_started
+    time_tracking:
+      estimated: 24h
+      logged: 0h
+      remaining: 24h
+
+metrics:
+  velocity:
+    planned: 180_points
+    completed: 45_points
+    in_progress: 89_points
+    blocked: 21_points
+  by_priority:
+    critical: 55_points
+    high: 50_points
+    medium: 18_points
+    low: 0_points
+  by_type:
+    feature: 68_points
+    optimization: 13_points
+    infrastructure: 21_points
+    design: 8_points
+    analysis: 5_points
+  team_utilization:
+    alice-chen: 85%
+    bob-smith: 75%
+    carol-kim: 80%
+    david-lee: 70%
+    frank-zhang: 60%
+    others: 65%

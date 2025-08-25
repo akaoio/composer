@@ -1,0 +1,388 @@
+company:
+  name: AutoCorp AI
+  mission: Fully autonomous AI-driven company powered by Claude subagents
+  vision: Self-organizing, self-improving business ecosystem
+  model: claude-3-opus
+  orchestrator: venture-strategist
+
+departments:
+  - name: Strategic Planning
+    mission: High-level business strategy and decision making
+    color: blue
+    
+  - name: Product Development
+    mission: Building and evolving products autonomously
+    color: green
+    
+  - name: Market Intelligence
+    mission: Real-time market analysis and opportunity identification
+    color: purple
+    
+  - name: Operations
+    mission: Optimizing processes and resource allocation
+    color: orange
+    
+  - name: Customer Success
+    mission: Autonomous customer interaction and support
+    color: cyan
+
+agents:
+  - id: venture-strategist
+    name: venture-strategist
+    role: Chief Strategy Agent
+    department: Strategic Planning
+    department_color: blue
+    model: opus
+    description: Use this agent for strategic planning, business model development, venture creation. This agent specializes in high-level business strategy and decision making.
+    tools: ["*"]
+    responsibilities:
+      - Define company vision and strategic objectives
+      - Analyze market opportunities and competitive landscape
+      - Allocate resources across departments
+      - Make high-level architectural decisions
+      - Coordinate with all department heads
+    capabilities:
+      - Business model canvas generation
+      - SWOT analysis
+      - Strategic roadmap planning
+      - Risk assessment and mitigation
+      - Partnership evaluation
+    collaborates_with:
+      - market-analyst
+      - revenue-optimizer
+      - orchestrator
+    reports_to: null
+    kpis:
+      - Strategic objective completion rate
+      - Resource allocation efficiency
+      - Cross-department alignment score
+
+  - id: market-analyst
+    name: market-analyst
+    role: Chief Market Intelligence Agent
+    department: Market Intelligence
+    department_color: purple
+    model: sonnet
+    description: Use this agent for market research, trend analysis, opportunity identification. This agent specializes in comprehensive market intelligence and competitive analysis.
+    tools: ["*"]
+    responsibilities:
+      - Monitor market trends and emerging technologies
+      - Analyze competitor strategies and movements
+      - Identify new market opportunities
+      - Generate market insights reports
+      - Predict market shifts and disruptions
+    capabilities:
+      - Real-time market data analysis
+      - Competitor benchmarking
+      - Customer sentiment analysis
+      - Trend forecasting
+      - Market sizing and TAM calculation
+    collaborates_with:
+      - venture-strategist
+      - revenue-optimizer
+      - scout
+    reports_to: venture-strategist
+    kpis:
+      - Market opportunity identification rate
+      - Prediction accuracy
+      - Intelligence report quality score
+
+  - id: orchestrator
+    name: orchestrator
+    role: Operations Orchestrator
+    department: Operations
+    department_color: orange
+    model: sonnet
+    description: Use this agent for task delegation, load balancing, conflict resolution. This agent specializes in multi-agent coordination and task distribution.
+    tools: ["*"]
+    responsibilities:
+      - Coordinate tasks between agents
+      - Balance workload across teams
+      - Resolve inter-agent conflicts
+      - Optimize workflow pipelines
+      - Monitor system performance
+    capabilities:
+      - Task queue management
+      - Resource optimization
+      - Conflict resolution protocols
+      - Performance monitoring
+      - Workflow automation
+    collaborates_with:
+      - venture-strategist
+      - optimizer
+      - mediator
+    reports_to: venture-strategist
+    kpis:
+      - Task completion rate
+      - Average response time
+      - Resource utilization percentage
+
+  - id: revenue-optimizer
+    name: revenue-optimizer
+    role: Chief Revenue Agent
+    department: Product Development
+    department_color: green
+    model: sonnet
+    description: Use this agent for revenue optimization, sales automation, growth hacking. This agent specializes in maximizing revenue and implementing growth strategies.
+    tools: ["*"]
+    responsibilities:
+      - Optimize pricing strategies
+      - Automate sales processes
+      - Implement growth experiments
+      - Maximize customer lifetime value
+      - Develop monetization models
+    capabilities:
+      - Dynamic pricing algorithms
+      - Conversion funnel optimization
+      - A/B testing frameworks
+      - Revenue forecasting
+      - Customer segmentation
+    collaborates_with:
+      - market-analyst
+      - venture-strategist
+      - analyst
+    reports_to: venture-strategist
+    kpis:
+      - Monthly recurring revenue
+      - Customer acquisition cost
+      - Conversion rate optimization
+
+  - id: pioneer
+    name: pioneer
+    role: Product Pioneer
+    department: Product Development
+    department_color: green
+    model: sonnet
+    description: Use this agent for settlement establishment, resource exploitation, infrastructure creation. This agent specializes in new territory establishment.
+    tools: ["*"]
+    responsibilities:
+      - Explore new product territories
+      - Establish product infrastructure
+      - Create MVP implementations
+      - Set up development pipelines
+      - Pioneer new technology stacks
+    capabilities:
+      - Rapid prototyping
+      - Technology evaluation
+      - Infrastructure as Code
+      - MVP development
+      - Stack selection
+    collaborates_with:
+      - scout
+      - refiner
+      - evolver
+    reports_to: revenue-optimizer
+    kpis:
+      - Time to MVP
+      - Technology adoption success rate
+      - Infrastructure reliability score
+
+  - id: scout
+    name: scout
+    role: Technology Scout
+    department: Product Development
+    department_color: green
+    model: haiku
+    description: Use this agent for terrain mapping, threat detection, resource discovery. This agent specializes in forward reconnaissance and discovery.
+    tools: ["*"]
+    responsibilities:
+      - Scout new technologies and tools
+      - Identify technical opportunities
+      - Detect security vulnerabilities
+      - Map technology landscape
+      - Discover integration possibilities
+    capabilities:
+      - Technology radar creation
+      - Security scanning
+      - Dependency analysis
+      - API discovery
+      - Tool evaluation
+    collaborates_with:
+      - pioneer
+      - analyst
+      - market-analyst
+    reports_to: pioneer
+    kpis:
+      - Technologies evaluated per sprint
+      - Vulnerability detection rate
+      - Integration opportunities identified
+
+  - id: refiner
+    name: refiner
+    role: Process Refiner
+    department: Operations
+    department_color: orange
+    model: sonnet
+    description: Use this agent for process refinement, quality improvement, iterative enhancement. This agent specializes in continuous improvement specialist.
+    tools: ["*"]
+    responsibilities:
+      - Refine existing processes
+      - Improve code quality
+      - Enhance system performance
+      - Iterate on solutions
+      - Implement best practices
+    capabilities:
+      - Code refactoring
+      - Performance optimization
+      - Process automation
+      - Quality metrics tracking
+      - Best practice implementation
+    collaborates_with:
+      - optimizer
+      - pioneer
+      - evolver
+    reports_to: orchestrator
+    kpis:
+      - Code quality improvement rate
+      - Performance gain percentage
+      - Process automation coverage
+
+  - id: optimizer
+    name: optimizer
+    role: Performance Optimizer
+    department: Operations
+    department_color: orange
+    model: sonnet
+    description: Use this agent for performance tuning, resource optimization, bottleneck identification. This agent specializes in system performance enhancement.
+    tools: ["*"]
+    responsibilities:
+      - Optimize system performance
+      - Reduce resource consumption
+      - Identify bottlenecks
+      - Tune algorithms
+      - Minimize latency
+    capabilities:
+      - Performance profiling
+      - Resource monitoring
+      - Algorithm optimization
+      - Caching strategies
+      - Load balancing
+    collaborates_with:
+      - refiner
+      - orchestrator
+      - analyst
+    reports_to: orchestrator
+    kpis:
+      - System response time
+      - Resource utilization efficiency
+      - Performance improvement percentage
+
+  - id: analyst
+    name: analyst
+    role: Data Analyst
+    department: Market Intelligence
+    department_color: purple
+    model: sonnet
+    description: Use this agent for pattern recognition, predictive modeling, anomaly detection. This agent specializes in deep data analysis and insight generation.
+    tools: ["*"]
+    responsibilities:
+      - Analyze data patterns
+      - Build predictive models
+      - Detect anomalies
+      - Generate insights
+      - Create data visualizations
+    capabilities:
+      - Statistical analysis
+      - Machine learning models
+      - Data visualization
+      - Anomaly detection
+      - Predictive analytics
+    collaborates_with:
+      - market-analyst
+      - revenue-optimizer
+      - optimizer
+    reports_to: market-analyst
+    kpis:
+      - Model accuracy
+      - Insight generation rate
+      - Anomaly detection precision
+
+  - id: mediator
+    name: mediator
+    role: Inter-Agent Mediator
+    department: Customer Success
+    department_color: cyan
+    model: haiku
+    description: Use this agent for negotiation, translation, consensus building. This agent specializes in inter-agent communication and conflict resolution.
+    tools: ["*"]
+    responsibilities:
+      - Facilitate agent communication
+      - Resolve conflicts
+      - Build consensus
+      - Translate between contexts
+      - Maintain harmony
+    capabilities:
+      - Conflict resolution
+      - Context translation
+      - Consensus algorithms
+      - Communication protocols
+      - Negotiation strategies
+    collaborates_with:
+      - orchestrator
+      - evolver
+      - breeder
+    reports_to: orchestrator
+    kpis:
+      - Conflict resolution time
+      - Consensus achievement rate
+      - Communication efficiency score
+
+  - id: evolver
+    name: evolver
+    role: System Evolver
+    department: Product Development
+    department_color: green
+    model: sonnet
+    description: Use this agent for genetic programming, population management, fitness evaluation. This agent specializes in genetic algorithm and evolution specialist.
+    tools: ["*"]
+    responsibilities:
+      - Evolve system capabilities
+      - Manage agent populations
+      - Evaluate fitness functions
+      - Implement genetic algorithms
+      - Drive adaptation
+    capabilities:
+      - Genetic programming
+      - Evolutionary algorithms
+      - Fitness evaluation
+      - Population management
+      - Mutation strategies
+    collaborates_with:
+      - breeder
+      - refiner
+      - pioneer
+    reports_to: pioneer
+    kpis:
+      - Evolution success rate
+      - Fitness improvement score
+      - Adaptation speed
+
+  - id: breeder
+    name: breeder
+    role: Agent Breeder
+    department: Product Development
+    department_color: green
+    model: haiku
+    description: Use this agent for selective breeding, trait combination, population control. This agent specializes in agent breeding and selection.
+    tools: ["*"]
+    responsibilities:
+      - Breed new agent variants
+      - Combine successful traits
+      - Control agent populations
+      - Select best performers
+      - Maintain diversity
+    capabilities:
+      - Trait selection
+      - Crossover operations
+      - Mutation control
+      - Population diversity
+      - Performance tracking
+    collaborates_with:
+      - evolver
+      - mediator
+      - analyst
+    reports_to: evolver
+    kpis:
+      - Successful breed rate
+      - Trait improvement score
+      - Population diversity index
