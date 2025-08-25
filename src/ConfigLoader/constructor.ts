@@ -4,6 +4,9 @@ export function constructor(this: any, configPath?: string) {
 }
 
 function findConfigFile(): string | undefined {
+  const fs = require('fs')
+  const path = require('path')
+  
   const candidates = [
     'composer.config.js',
     'composer.config.mjs', 
@@ -12,7 +15,12 @@ function findConfigFile(): string | undefined {
     'composer.config.json'
   ]
   
-  // In a real implementation, we'd check file system
-  // For now, return the first candidate
-  return candidates[0]
+  for (const candidate of candidates) {
+    const fullPath = path.resolve(process.cwd(), candidate)
+    if (fs.existsSync(fullPath)) {
+      return candidate
+    }
+  }
+  
+  return undefined
 }

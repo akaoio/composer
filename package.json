@@ -57,8 +57,8 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "@akaoio/battle": "^1.1.0",
-    "@akaoio/builder": "file:../builder",
+    "@akaoio/battle": "*",
+    "@akaoio/builder": "*",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.11.0",
     "node-pty": "^1.0.0",
