@@ -1,4 +1,4 @@
-const yaml = require('js-yaml')
+import yaml from 'js-yaml'
 import { generateTableOfContents } from './generateTableOfContents.js'
 
 export async function formatAsMarkdown(this: any, content: string, options: any = {}): Promise<string> {

@@ -15,8 +15,7 @@ export async function generateDynamicTargets(this: any, targetConfig: any, resul
       targets.push({
         path: targetPath,
         content,
-        options: targetConfig.options,
-        context  // Pass context for template rendering
+        options: targetConfig.options
       })
     }
   } else if (typeof data === 'object') {

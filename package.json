@@ -2,8 +2,9 @@
   "name": "@akaoio/composer",
   "version": "0.2.4",
   "description": "Atomic document composition engine with real-time template processing",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "composer": "./bin/composer.mjs"
@@ -11,15 +12,16 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {
     "build": "akao-build",
     "dev": "akao-build --watch",
     "lint": "tsc --noEmit",
-    "test": "npm run build && bun test/index.ts",
+    "test": "bun test/index.ts",
+    "test:full": "npm run build && bun test/index.ts",
     "test:watch": "bun --watch test/index.ts",
     "prepublishOnly": "npm run build && npm test",
     "example": "node example/index.js",

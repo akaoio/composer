@@ -1,6 +1,7 @@
+import { promises as fs } from 'fs'
+import path from 'path'
+
 export async function walkDir(this: any, dirPath: string, callback: (filePath: string) => void): Promise<void> {
-  const fs = require('fs').promises
-  const path = require('path')
   
   try {
     const entries = await fs.readdir(dirPath, { withFileTypes: true })

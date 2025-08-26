@@ -99,7 +99,7 @@ function registerBuiltinProcessors(this: any) {
               if (Array.isArray(acc) && Array.isArray(source)) {
                 return [...acc, ...source]
               }
-              return { ...acc, ...source }
+              return Object.assign({}, acc, source)
             }, Array.isArray(sources[0]) ? [] : {})
             
           case 'shallow':

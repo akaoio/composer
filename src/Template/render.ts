@@ -10,11 +10,28 @@ export function render(this: any, contextOrTemplate?: any): string {
   // First handle loops and conditionals - pass context for nested loops
   let rendered = this.renderWithLoops(templateContent, this.context)
   
-  // Then handle simple variable replacements
+  // Then handle simple variable replacements and helper calls
   const variables = this.parseVariables(rendered)
   
   for (const variable of variables) {
-    const value = this.resolveVariable(variable)
+    let value
+    const variablePath = variable.path.join('.')
+    
+    // Check if this looks like a helper call (contains spaces and parentheses aren't needed)
+    if (variablePath.includes(' ')) {
+      // Parse as helper call with context
+      try {
+        value = this.parseHelperCall(`(${variablePath})`, this.context?.data || this.context)
+        value = String(value)
+      } catch (error) {
+        // Fall back to normal variable resolution
+        value = this.resolveVariable(variable)
+      }
+    } else {
+      // Normal variable resolution
+      value = this.resolveVariable(variable)
+    }
+    
     rendered = rendered.replace(variable.original, value)
   }
   

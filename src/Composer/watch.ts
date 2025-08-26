@@ -68,9 +68,9 @@ export function watch(this: any, callback?: (outputs: Map<string, string>) => vo
   
   // Enhanced event handling with better error recovery
   this.watcher
-    .on('add', (filepath) => handleChange(filepath, 'add'))
-    .on('change', (filepath) => handleChange(filepath, 'change'))
-    .on('unlink', (filepath) => handleChange(filepath, 'unlink'))
+    .on('add', (filepath: string) => handleChange(filepath, 'add'))
+    .on('change', (filepath: string) => handleChange(filepath, 'change'))
+    .on('unlink', (filepath: string) => handleChange(filepath, 'unlink'))
     .on('error', (error: Error) => {
       console.error('Watch error:', error)
       // Attempt to recover from watch errors

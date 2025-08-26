@@ -21,5 +21,5 @@
         .ansi-white { color: #fff; }
     </style>
 </head>
-<body>🏗️ Building documentation...<br>🏗️ Starting build pipeline...<br>📁 Loading sources...<br>📦 Processing outputs...<br></span><span class="ansi-red">❌ Build failed: ENOENT: no such file or directory, open '/home/x/Projects/composer/templates/readme.md'</span><br></span>[2mundefined</span><br></body>
+<body><span class="ansi-red">error</span>[2m: </span>[1mCannot find module './dist/index.js' from '/home/x/core/projects/composer/[eval]'</span><br></span><br>[2mBun v1.2.20 (Linux arm64)</span><br></body>
 </html>

@@ -7,6 +7,8 @@ import type { RenderContext } from '../type/index.js'
 
 export interface ComposerOptions {
   configPath?: string
+  dataPath?: string
+  templatesPath?: string
   outputPath?: string
   watch?: boolean
   debounceMs?: number

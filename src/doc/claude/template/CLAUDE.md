@@ -1,22 +1,27 @@
 # CLAUDE.md
 
-This file provides guidance to Claude AI when working with the {{project.name}} codebase.
+This file provides guidance to Claude AI when working with the @akaoio/composer codebase.
 
 ## Project Overview
 
-{{project.name}} - {{project.description}}
+@akaoio/composer - Atomic document composition engine with real-time template processing
 
-**Version**: {{project.version}}
-**License**: {{project.license}}
+**Version**: 0.2.4
+**License**: MIT
 
 ## Core Development Principles
 
-{{#principles}}
-### {{number}}. {{title}}
+### 1. Class = Directory Pattern
+Each class is organized as a directory with one method per file, ensuring clear separation of concerns and maintainable code structure.
 
-{{content}}
+### 2. Zero Technical Debt
+No TODO, FIXME, or placeholder implementations - every piece of code must be production-ready.
 
-{{/principles}}
+### 3. Test-Driven Development
+Write tests before implementation, following Red-Green-Refactor cycle for all new features.
+
+### 4. Real Implementation Only
+100% authentic code with no mocks or stubs in production paths.
 
 ## Architecture Patterns
 

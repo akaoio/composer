@@ -4,6 +4,7 @@ export interface SourceConfig {
   parser?: 'yaml' | 'json' | 'markdown' | 'handlebars' | string
   namespace?: string
   transform?: (content: any, file: { path: string; name: string }) => any
+  asObject?: boolean
 }
 
 export interface TaskConfig {

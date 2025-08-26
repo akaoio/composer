@@ -1,0 +1,12 @@
+title: "My Project"
+description: "A sample project using @akaoio/composer"
+name: "@my/project"
+usage: |
+  import { MyProject } from '@my/project'
+  
+  const project = new MyProject()
+  project.run()
+features:
+  - "Feature 1"
+  - "Feature 2" 
+  - "Feature 3"

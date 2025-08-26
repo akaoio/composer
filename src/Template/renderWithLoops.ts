@@ -66,12 +66,12 @@ export function renderWithLoops(this: any, template: string, context?: any): str
     const loopContent = result.substring(contentStart, endPos)
     const fullMatch = result.substring(eachStart, endPos + 9) // Include {{/each}}
     
-    // Resolve the array from context
-    const array = resolveFromContext(arrayPath.split('.'), ctx)
+    // Resolve the array/object from context
+    const collection = resolveFromContext(arrayPath.split('.'), ctx)
     
-    if (Array.isArray(array)) {
-      // Render the loop content for each item
-      const renderedItems = array.map((item, index) => {
+    if (Array.isArray(collection)) {
+      // Handle array iteration
+      const renderedItems = collection.map((item, index) => {
         // Create a new context with the item
         const itemContext = {
           ...ctx, // Use the passed context
@@ -80,7 +80,7 @@ export function renderWithLoops(this: any, template: string, context?: any): str
           this: item, // Support {{this}} for current item
           '@index': index,
           '@first': index === 0,
-          '@last': index === array.length - 1
+          '@last': index === collection.length - 1
         }
         
         // Also spread item properties to top level for easier access
@@ -109,8 +109,52 @@ export function renderWithLoops(this: any, template: string, context?: any): str
       // Replace the entire loop block with rendered content
       result = result.substring(0, eachStart) + renderedItems.join('') + result.substring(endPos + 9)
       processed = true
+    } else if (collection && typeof collection === 'object' && collection !== null) {
+      // Handle object iteration
+      const entries = Object.entries(collection)
+      const renderedItems = entries.map(([key, value], index) => {
+        // Create a new context with the key-value pair
+        const itemContext = {
+          ...ctx, // Use the passed context
+          item: value,
+          key,
+          index,
+          this: value, // Support {{this}} for current value
+          '@key': key, // Support {{@key}} for object key
+          '@value': value, // Support {{@value}} for object value
+          '@index': index,
+          '@first': index === 0,
+          '@last': index === entries.length - 1
+        }
+        
+        // Also spread value properties to top level for easier access if value is an object
+        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+          Object.keys(value).forEach(prop => {
+            itemContext[prop] = (value as any)[prop]
+          })
+        }
+        
+        // Recursively process the loop content for nested loops
+        // First process any nested loops
+        let processed = this.renderWithLoops(loopContent, itemContext)
+        
+        // Then handle variable replacements with the item context
+        const variables = this.parseVariables(processed)
+        for (const variable of variables) {
+          const resolvedValue = resolveFromContext(variable.path, itemContext)
+          if (resolvedValue !== undefined) {
+            processed = processed.replace(variable.original, String(resolvedValue))
+          }
+        }
+        
+        return processed
+      })
+      
+      // Replace the entire loop block with rendered content
+      result = result.substring(0, eachStart) + renderedItems.join('') + result.substring(endPos + 9)
+      processed = true
     } else {
-      // If not an array, remove the loop block
+      // If not an array or object, remove the loop block
       result = result.substring(0, eachStart) + result.substring(endPos + 9)
       processed = true
     }
@@ -130,8 +174,16 @@ export function renderWithLoops(this: any, template: string, context?: any): str
       const elseContent = match[3] || ''
       const fullMatch = match[0]
       
-      // Resolve the condition value from context
-      const conditionValue = resolveFromContext(conditionPath.split('.'), ctx)
+      let conditionValue: any
+      
+      // Check if this is a helper call (starts with parentheses)
+      if (conditionPath.startsWith('(') && conditionPath.endsWith(')')) {
+        // Parse and evaluate helper call
+        conditionValue = this.parseHelperCall(conditionPath, ctx)
+      } else {
+        // Resolve as simple variable path
+        conditionValue = resolveFromContext(conditionPath.split('.'), ctx)
+      }
       
       // Check if condition is truthy
       const isTruthy = conditionValue && conditionValue !== '' && conditionValue !== '0' && conditionValue !== false

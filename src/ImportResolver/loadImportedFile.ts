@@ -163,8 +163,8 @@ async function resolveImportsInData(this: any, data: any, baseDir: string): Prom
     for (const [key, value] of Object.entries(data)) {
       if (key !== 'import' && key !== '$import' && key !== 'imports' && key !== '$imports') {
         // Handle nested $import
-        if (typeof value === 'object' && value !== null && (value.$import || value.import)) {
-          const importPath = path.resolve(baseDir, value.$import || value.import)
+        if (typeof value === 'object' && value !== null && ((value as any).$import || (value as any).import)) {
+          const importPath = path.resolve(baseDir, (value as any).$import || (value as any).import)
           resolved[key] = await this.loadImportedFile(importPath)
         } else {
           // Recursively process nested data

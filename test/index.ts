@@ -112,7 +112,7 @@ Version: {{project.version}}
 function createTestScript() {
   const scriptPath = join(projectRoot, 'tmp', 'test-composer.js')
   writeFileSync(scriptPath, `
-import { Composer } from '../dist/index.mjs'
+import { Composer } from '../dist/index.js'
 import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
 
@@ -210,27 +210,39 @@ async function runTests() {
     {
       name: 'API: Composer Class',
       command: 'bun',
-      args: ['-e', `import { Composer } from './dist/index.mjs'; const c = new Composer(); console.log('Composer instance created');`],
+      args: ['-e', `import { Composer } from './dist/index.js'; const c = new Composer(); console.log('Composer instance created');`],
       expect: ['Composer instance created']
     },
     // Template Processing Tests
     {
       name: 'Template: Variable Resolution',
       command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.mjs'; const t = new Template('Hello {{name}}!'); console.log(t.render({ data: { name: 'World' } }))`],
+      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('Hello {{name}}!'); console.log(t.render({ data: { name: 'World' } }))`],
       expect: ['Hello World!']
     },
     {
       name: 'Template: Loop Processing',
       command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.mjs'; const t = new Template('{{#each items}}{{name}} {{/each}}'); console.log(t.render({ data: { items: [{ name: 'A' }, { name: 'B' }] } }).trim())`],
+      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each items}}{{name}} {{/each}}'); console.log(t.render({ data: { items: [{ name: 'A' }, { name: 'B' }] } }).trim())`],
       expect: ['A B']
     },
     {
       name: 'Template: Conditional Processing',
       command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.mjs'; const t = new Template('{{#if show}}Visible{{/if}}'); console.log(t.render({ data: { show: true } }))`],
+      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#if show}}Visible{{/if}}'); console.log(t.render({ data: { show: true } }))`],
       expect: ['Visible']
+    },
+    {
+      name: 'Template: Object Iteration',
+      command: 'bun',
+      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each users}}{{@key}}: {{name}} {{/each}}'); console.log(t.render({ data: { users: { alice: { name: 'Alice' }, bob: { name: 'Bob' } } } }).trim())`],
+      expect: ['alice: Alice bob: Bob']
+    },
+    {
+      name: 'Template: Object @key Helper',
+      command: 'bun',
+      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each config}}{{@key}}={{@value}}{{/each}}'); console.log(t.render({ data: { config: { debug: true, env: 'prod' } } }).trim())`],
+      expect: ['debug=true', 'env=prod']
     },
     // Real Data Loading Tests
     {
@@ -251,7 +263,7 @@ async function runTests() {
       name: 'Format: Markdown Processing',
       command: 'bun',
       args: ['-e', `
-        import { Template } from './dist/index.mjs'
+        import { Template } from './dist/index.js'
         const template = new Template('# {{title}}\\n\\n{{content}}')
         const result = template.render({ data: { title: 'Test Doc', content: 'This is content' }})
         console.log('Markdown:', result.includes('# Test Doc') ? 'FORMATTED' : 'FAILED')

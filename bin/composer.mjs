@@ -3,9 +3,7 @@
 import { readFile } from 'fs/promises'
 import path, { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const { BuildPipeline } = require('../dist/index.js')
+import { BuildPipeline } from '../dist/index.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)

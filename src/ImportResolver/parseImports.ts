@@ -27,6 +27,7 @@ function parseYamlImports(this: any, content: string): ImportConfig[] {
   try {
     const data = yaml.load(content) as any
     const imports: ImportConfig[] = []
+    const self = this
 
     // Recursively find all import directives
     function findImports(obj: any, currentPath: string[] = []): void {
@@ -35,7 +36,7 @@ function parseYamlImports(this: any, content: string): ImportConfig[] {
       if (Array.isArray(obj)) {
         obj.forEach((item, index) => {
           if (item && typeof item === 'object' && item.import) {
-            imports.push(normalizeImportConfig.call(this, item.import))
+            imports.push(normalizeImportConfig.call(self, item.import))
           } else {
             findImports(item, [...currentPath, String(index)])
           }
@@ -43,10 +44,10 @@ function parseYamlImports(this: any, content: string): ImportConfig[] {
       } else {
         Object.entries(obj).forEach(([key, value]) => {
           if (key === 'import' && typeof value === 'string') {
-            imports.push(normalizeImportConfig.call(this, value))
+            imports.push(normalizeImportConfig.call(self, value))
           } else if (key === 'imports' && Array.isArray(value)) {
             value.forEach(imp => {
-              imports.push(normalizeImportConfig.call(this, imp))
+              imports.push(normalizeImportConfig.call(self, imp))
             })
           } else {
             findImports(value, [...currentPath, key])
@@ -66,6 +67,7 @@ function parseJsonImports(this: any, content: string): ImportConfig[] {
   try {
     const data = JSON.parse(content)
     const imports: ImportConfig[] = []
+    const self = this
 
     // Recursively find all import directives (same as YAML)
     function findImports(obj: any, currentPath: string[] = []): void {
@@ -75,9 +77,9 @@ function parseJsonImports(this: any, content: string): ImportConfig[] {
         obj.forEach((item, index) => {
           if (typeof item === 'string' && item.startsWith('import:')) {
             // Handle string imports like "import:../path/to/file.json"
-            imports.push(normalizeImportConfig.call(this, item.substring(7)))
+            imports.push(normalizeImportConfig.call(self, item.substring(7)))
           } else if (item && typeof item === 'object' && item.import) {
-            imports.push(normalizeImportConfig.call(this, item.import))
+            imports.push(normalizeImportConfig.call(self, item.import))
           } else {
             findImports(item, [...currentPath, String(index)])
           }
@@ -85,14 +87,14 @@ function parseJsonImports(this: any, content: string): ImportConfig[] {
       } else {
         Object.entries(obj).forEach(([key, value]) => {
           if (key === 'import' && typeof value === 'string') {
-            imports.push(normalizeImportConfig.call(this, value))
+            imports.push(normalizeImportConfig.call(self, value))
           } else if (key === 'imports' && Array.isArray(value)) {
             value.forEach(imp => {
-              imports.push(normalizeImportConfig.call(this, imp))
+              imports.push(normalizeImportConfig.call(self, imp))
             })
           } else if (typeof value === 'string' && value.startsWith('import:')) {
             // Handle string imports in values
-            imports.push(normalizeImportConfig.call(this, value.substring(7)))
+            imports.push(normalizeImportConfig.call(self, value.substring(7)))
           } else {
             findImports(value, [...currentPath, key])
           }

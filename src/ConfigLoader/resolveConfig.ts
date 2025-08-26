@@ -21,7 +21,8 @@ export function resolveConfig(this: any, config: Partial<ComposerConfig>, baseDi
       {
         target: 'output/README.md',
         template: 'templates/readme.md',
-        format: 'markdown'
+        format: 'markdown',
+        processor: 'default'
       }
     ],
     
