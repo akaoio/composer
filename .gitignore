@@ -25,3 +25,4 @@ coverage/
 
 # Cache
 .cache/
+logs/*.json
