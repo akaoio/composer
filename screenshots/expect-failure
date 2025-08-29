@@ -1,25 +1,0 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <style>
-        body { 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Courier New', monospace;
-            white-space: pre;
-            padding: 20px;
-        }
-        .ansi-black { color: #000; }
-        .ansi-red { color: #f00; }
-        .ansi-green { color: #0f0; }
-        .ansi-yellow { color: #ff0; }
-        .ansi-blue { color: #00f; }
-        .ansi-magenta { color: #f0f; }
-        .ansi-cyan { color: #0ff; }
-        .ansi-white { color: #fff; }
-    </style>
-</head>
-<body><span class="ansi-red">error</span>[2m: </span>[1mCannot find module './dist/index.js' from '/home/x/core/projects/composer/[eval]'</span><br></span><br>[2mBun v1.2.20 (Linux arm64)</span><br></body>
-</html>
