@@ -177,13 +177,13 @@ async function runTests() {
     // CLI Tests
     {
       name: 'CLI: Help',
-      command: 'bun',
+      command: 'node',
       args: ['bin/composer.mjs', '--help'],
       expect: ['Atomic document composition engine', 'COMMANDS:', 'build', 'watch', 'OPTIONS:']
     },
     {
       name: 'CLI: Version',
-      command: 'bun',
+      command: 'node',
       args: ['bin/composer.mjs', '--version'],
       expect: ['0.2.4']
     },
@@ -202,53 +202,53 @@ async function runTests() {
     // },
     {
       name: 'CLI: Invalid Config',
-      command: 'bun',
+      command: 'node',
       args: ['bin/composer.mjs', 'build', '--config', 'non-existent.js'],
       expect: ['❌', 'Config file not found']
     },
     // API Tests
     {
       name: 'API: Composer Class',
-      command: 'bun',
-      args: ['-e', `import { Composer } from './dist/index.js'; const c = new Composer(); console.log('Composer instance created');`],
+      command: 'node',
+      args: ['--input-type=module', '-e', `import { Composer } from './dist/index.js'; const c = new Composer(); console.log('Composer instance created');`],
       expect: ['Composer instance created']
     },
     // Template Processing Tests
     {
       name: 'Template: Variable Resolution',
-      command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('Hello {{name}}!'); console.log(t.render({ data: { name: 'World' } }))`],
+      command: 'node',
+      args: ['--input-type=module', '-e', `import { Template } from './dist/index.js'; const t = new Template('Hello {{name}}!'); console.log(t.render({ data: { name: 'World' } }))`],
       expect: ['Hello World!']
     },
     {
       name: 'Template: Loop Processing',
-      command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each items}}{{name}} {{/each}}'); console.log(t.render({ data: { items: [{ name: 'A' }, { name: 'B' }] } }).trim())`],
+      command: 'node',
+      args: ['--input-type=module', '-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each items}}{{name}} {{/each}}'); console.log(t.render({ data: { items: [{ name: 'A' }, { name: 'B' }] } }).trim())`],
       expect: ['A B']
     },
     {
       name: 'Template: Conditional Processing',
-      command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#if show}}Visible{{/if}}'); console.log(t.render({ data: { show: true } }))`],
+      command: 'node',
+      args: ['--input-type=module', '-e', `import { Template } from './dist/index.js'; const t = new Template('{{#if show}}Visible{{/if}}'); console.log(t.render({ data: { show: true } }))`],
       expect: ['Visible']
     },
     {
       name: 'Template: Object Iteration',
-      command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each users}}{{@key}}: {{name}} {{/each}}'); console.log(t.render({ data: { users: { alice: { name: 'Alice' }, bob: { name: 'Bob' } } } }).trim())`],
+      command: 'node',
+      args: ['--input-type=module', '-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each users}}{{@key}}: {{name}} {{/each}}'); console.log(t.render({ data: { users: { alice: { name: 'Alice' }, bob: { name: 'Bob' } } } }).trim())`],
       expect: ['alice: Alice bob: Bob']
     },
     {
       name: 'Template: Object @key Helper',
-      command: 'bun',
-      args: ['-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each config}}{{@key}}={{@value}}{{/each}}'); console.log(t.render({ data: { config: { debug: true, env: 'prod' } } }).trim())`],
+      command: 'node',
+      args: ['--input-type=module', '-e', `import { Template } from './dist/index.js'; const t = new Template('{{#each config}}{{@key}}={{@value}}{{/each}}'); console.log(t.render({ data: { config: { debug: true, env: 'prod' } } }).trim())`],
       expect: ['debug=true', 'env=prod']
     },
     // Real Data Loading Tests
     {
       name: 'Data: YAML Loading',
-      command: 'bun',
-      args: ['-e', `
+      command: 'node',
+      args: ['--input-type=module', '-e', `
         import yaml from 'js-yaml'
         import { readFileSync, writeFileSync, mkdirSync } from 'fs'
         mkdirSync('tmp', { recursive: true })
@@ -261,8 +261,8 @@ async function runTests() {
     // Real Format Tests
     {
       name: 'Format: Markdown Processing',
-      command: 'bun',
-      args: ['-e', `
+      command: 'node',
+      args: ['--input-type=module', '-e', `
         import { Template } from './dist/index.js'
         const template = new Template('# {{title}}\\n\\n{{content}}')
         const result = template.render({ data: { title: 'Test Doc', content: 'This is content' }})
@@ -272,7 +272,7 @@ async function runTests() {
     },
     {
       name: 'Format: JSON Processing',
-      command: 'bun',
+      command: 'node',
       args: ['-e', `
         const data = { name: 'composer', version: '0.2.4' }
         const json = JSON.stringify(data, null, 2)
