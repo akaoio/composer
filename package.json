@@ -61,7 +61,7 @@
   "devDependencies": {
     "@akaoio/battle": "*",
     "@akaoio/builder": "*",
-    "@akaoio/ruspty": "*",
+    "@akaoio/ruspty": "^3.6.1",
     "@akaoio/stacker": "^0.0.2",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^20.11.0",
