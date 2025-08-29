@@ -8,7 +8,7 @@ const entries = glob.sync('src/**/*.ts', {
 export default {
   entry: entries,
   formats: ["cjs", "esm"],
-  dts: true,
+  dts: false,
   sourcemap: true,
   clean: true,
   target: "node",

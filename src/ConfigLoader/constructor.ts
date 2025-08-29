@@ -3,9 +3,9 @@ export function constructor(this: any, configPath?: string) {
   this.config = undefined
 }
 
-function findConfigFile(): string | undefined {
-  const fs = require('fs')
-  const path = require('path')
+async function findConfigFile(): Promise<string | undefined> {
+  const { existsSync } = await import('node:fs')
+  const { resolve } = await import('node:path')
   
   const candidates = [
     'composer.config.js',
@@ -16,8 +16,8 @@ function findConfigFile(): string | undefined {
   ]
   
   for (const candidate of candidates) {
-    const fullPath = path.resolve(process.cwd(), candidate)
-    if (fs.existsSync(fullPath)) {
+    const fullPath = resolve(process.cwd(), candidate)
+    if (existsSync(fullPath)) {
       return candidate
     }
   }
