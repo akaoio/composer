@@ -80,7 +80,7 @@ jobs:
           if [ "${{ matrix.runtime }}" = "bun" ]; then
             bun install
           else
-            npm ci
+            npm install
           fi
 
       - name: Build Composer
