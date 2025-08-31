@@ -29,6 +29,7 @@ export async function loadConfig(this: any, configPath?: string): Promise<Compos
       switch (ext) {
       case '.js':
       case '.mjs':
+      case '.cjs':
         // Dynamic import for ES modules
         try {
           const module = await import(path.resolve(targetPath))

@@ -7,9 +7,13 @@
  * 2. Uses composer to generate its own documentation
  */
 
-const { execSync } = require('child_process')
-const path = require('path')
-const fs = require('fs')
+import { execSync } from 'child_process'
+import path from 'path'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 async function buildDocs() {
   console.log('📦 Building composer...')
@@ -18,10 +22,10 @@ async function buildDocs() {
   console.log('\n📝 Generating documentation using composer...')
   
   // Load the built composer
-  const { ConfigLoader, BuildPipeline } = require('../dist/index.js')
+  const { ConfigLoader, BuildPipeline } = await import('../dist/index.js')
   
   // Use the simple config for now
-  let configPath = path.join(__dirname, '..', 'composer.simple.config.js')
+  let configPath = path.join(__dirname, '..', 'composer.simple.config.cjs')
   
   if (!fs.existsSync(configPath)) {
     console.error('❌ Documentation config not found:', configPath)
@@ -104,7 +108,7 @@ async function buildDocs() {
 `
     
     fs.writeFileSync(configPath, docConfig)
-    console.log('✅ Created composer.doc.config.js')
+    console.log('✅ Created composer.simple.config.cjs')
   }
   
   // Load and execute the config
