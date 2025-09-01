@@ -1,6 +1,6 @@
 {
   "name": "@akaoio/composer",
-  "version": "0.2.4",
+  "version": "0.0.1",
   "description": "Atomic document composition engine with real-time template processing",
   "type": "module",
   "main": "dist/index.cjs",
@@ -59,9 +59,9 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "@akaoio/battle": "^1.2.3",
-    "@akaoio/builder": "*",
-    "@akaoio/stacker": "^0.0.2",
+    "@akaoio/battle": "workspace:*",
+    "@akaoio/builder": "workspace:*",
+    "@akaoio/stacker": "workspace:*",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^20.19.11",
     "tsx": "^4.20.4",
